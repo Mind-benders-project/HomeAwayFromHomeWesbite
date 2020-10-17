@@ -31,13 +31,35 @@
                         <li class = "nav-link"> 
 
                             <a class="nav-link" href="{{ url_for('search') }}">Search</a>  </li>
+
                         <li class = "nav-link"> 
+
+                            <a class="nav-link" href="{{ url_for('search') }}">Reward</a>  </li>
+
+
+                        {% if current_user.is_authenticated %}
+
+                            <li class = "nav-link"> 
+
+                            <a class="nav-link" href="{{ url_for('post') }}">Post</a>  </li>
+                            <li class = "nav-link"> 
+
+                            <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>  </li>
+                            <li class = "nav-link"> 
+
+                            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>  
+                            </li>
+                        {% else %}
+
+                            <li class = "nav-link"> 
 
                             <a class="nav-link" href="{{ url_for('login') }}">Login</a>  </li>
-                        <li class = "nav-link"> 
+                            <li class = "nav-link"> 
 
                             <a class="nav-link" href="{{ url_for('register') }}">Register</a>  
-                        </li>
+                            </li>
+
+                        {% endif %}
 
                     </ul>
                 </div>
