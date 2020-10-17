@@ -85,17 +85,17 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.role.label(class="form-control-label") }}
+                    {{ form.role.label() }}
 
                     {% if form.role.errors %}
-                        {{ form.role(class="form-control form-control-lg is-invalid") }}
+                        {{ form.role(class="is-invalid") }}
                         <div class="invalid-feedback">
                             {% for error in form.role.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.role(class="form-control form-control-lg") }}
+                        {{ form.role() }}
                     {% endif %}
                 </div>
 

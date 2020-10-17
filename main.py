@@ -1,4 +1,7 @@
-from flask import Flask, render_template, url_for, flash, redirect
+import os
+import secrets
+from PIL import Image
+from flask import Flask, render_template, url_for, flash, redirect, request
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
@@ -11,6 +14,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -75,6 +80,8 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -85,9 +92,12 @@ def home():
 def search():
     return render_template('search.html')
 
-from forms import RegistrationForm, LoginForm
+from forms import RegistrationForm, LoginForm,Post_info
 @app.route("/register", methods=['GET', 'POST'])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+
     form = RegistrationForm()
     if form.validate_on_submit():
         encrypted_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
@@ -101,15 +111,73 @@ def register():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password,form.password.data):
             login_user(user,remember=True)
-            return redirect(url_for('home'))
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('home'))
         else:
             flash('Login Unsuccessful. Incorrect email or password', 'danger')
     return render_template('login.html', form=form)
+
+
+
+@app.route("/logout", methods=['GET', 'POST'])
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
+
+
+@app.route("/profile", methods=['GET', 'POST'])
+@login_required
+def profile():
+    return render_template('profile.html', title='Account')
+
+
+def save_picture(form_picture):
+    random_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_picture.filename)
+    picture_fn = random_hex + f_ext
+    picture_path = os.path.join(app.root_path, 'static/profile_pics', picture_fn)
+
+    output_size = (125, 125)
+    i = Image.open(form_picture)
+    i.thumbnail(output_size)
+    i.save(picture_path)
+
+    return picture_fn
+
+
+
+@app.route("/post", methods=['GET', 'POST'])
+def post():
+    form = Post_info()
+    if form.validate_on_submit():
+        if form.picture1.data:
+            picture_file = save_picture(form.picture1.data)
+            current_user.image1 = picture_file
+        if form.picture2.data:
+            picture_file = save_picture(form.picture2.data)
+            current_user.image2 = picture_file
+        if form.picture3.data:
+            picture_file = save_picture(form.picture3.data)
+            current_user.image3 = picture_file
+        if form.pictur4.data:
+            picture_file = save_picture(form.picture4.data)
+            current_user.image4 = picture_file
+        if form.picture5.data:
+            picture_file = save_picture(form.picture5.data)
+            current_user.image5 = picture_file
+
+            flash('Your post posted successfully!', 'success')
+            return redirect(url_for('#'))
+        
+    return render_template('post.html', form=form)
+
 
 
 
