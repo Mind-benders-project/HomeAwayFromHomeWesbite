@@ -85,7 +85,7 @@ class Post(db.Model):
 @app.route("/home")
 def home():
     posts= Post.query.all()
-    return render_template('timeline.html' , posts=posts)
+    return render_template('home.html')
 
 
 @app.route("/search")
@@ -143,6 +143,7 @@ def logout():
 @app.route("/profile", methods=['GET', 'POST'])
 @login_required
 def profile():
+    posts= Post.query.all()
     form = UpdateProfile()
     if form.validate_on_submit():
         if form.picture.data:
@@ -153,7 +154,7 @@ def profile():
         return redirect(url_for('profile'))
    
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
-    return render_template('profile.html', image_file=image_file, form=form)
+    return render_template('profile.html', image_file=image_file, form=form, posts=posts)
 
 
 
