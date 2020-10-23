@@ -49,36 +49,25 @@
 
 {% endblock %}
 {% block content2 %}
+    <h1 style="padding-top: 5%">Posts</h1>
     {% for post in posts %}
-        <article class="media content-section">
-          <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/default.jpeg') }}">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="#">{{ post.author.user_name }}</a>
-              <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-            </div>
-            <div class="u-blog u-expanded-width u-repeater u-repeater-1"><!--blog_post-->
-          <div class="u-blog-post u-repeater-item u-white u-repeater-item-1">
-            <div class="u-container-layout u-similar-container u-container-layout-1"><!--blog_post_image-->
-              <!--/blog_post_image-->
-              <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="static/default.jpeg">
-              <div class="u-align-center u-container-style u-expanded-width u-group u-group-1">
-                <div class="u-container-layout u-container-layout-2"><!--blog_post_header-->
-                  <h2 class="u-blog-control u-custom-font u-font-montserrat u-text u-text-default u-text-2">
-                    <a class="u-post-header-link" href="#">{{ post.area }}</a>
-                  </h2>
-                  <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-1"><!--blog_post_metadata_date-->
-                    <span class="u-meta-date u-meta-icon"> Amenities
-                      <list>
-                        <ul>{{ post.furnishing_type }}
-                    </span><!--/blog_post_metadata_date-->
-                  </div><!--/blog_post_metadata--><!--blog_post_content-->
-                  <div class="u-blog-control u-post-content u-text u-text-3">comments : {{ post.comments }}</div><!--/blog_post_content-->
-                </div>
-              </div>
-            </div>
+
+      <main role="main" class="container">
+        <div class="row">
+          <div class="col-md-4" style="margin-top: 5%">
+            <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="static/default.jpeg">
+            <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
           </div>
+          <div class="col-md-8" style="margin-top: 5%">
+            <p>{{ post.area }}, {{ post.city }}, {{ post.state }}</p>
+
+
+            
           </div>
-        </article>
+              
+        </div>
+      </main>
+
     {% endfor %}
-{% endblock content2 %}
+    
+{% endblock %}
