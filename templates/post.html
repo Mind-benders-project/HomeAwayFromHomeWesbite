@@ -76,17 +76,17 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.no_of_bedrooms.label() }}
+                    {{ form.bedrooms.label() }}
 
-                    {% if form.no_of_bedrooms.errors %}
-                        {{ form.no_of_bedrooms(class="is-invalid") }}
+                    {% if form.bedrooms.errors %}
+                        {{ form.bedrooms(class="is-invalid") }}
                         <div class="invalid-feedback">
-                            {% for error in form.no_of_bedrooms.errors %}
+                            {% for error in form.bedrooms.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.no_of_bedrooms() }}
+                        {{ form.bedrooms() }}
                     {% endif %}
                 </div>
                 <div class="form-group">
@@ -229,6 +229,20 @@
                         </div>
                     {% else %}
                         {{ form.nearby(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.flat_rating.label(class="form-control-label") }}
+
+                    {% if form.flat_rating.errors %}
+                        {{ form.flat_rating(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.nearby.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.flat_rating(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
 

@@ -54,16 +54,16 @@ class Post(db.Model):
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     pincode = db.Column(db.Integer, nullable=False)
     rent = db.Column(db.Integer, nullable=False)
-    no_of_bedrooms = db.Column(db.Integer, nullable=False)
-    furnishing_type = db.Column(db.Integer,default=0, nullable=False)
-    refrigerator = db.Column(db.Integer,default=0, nullable=False)
-    washing_machine = db.Column(db.Integer, nullable=False)
-    ac = db.Column(db.Integer,default=0, nullable=False)
-    almirah = db.Column(db.Integer,default=0, nullable=False)
-    bed = db.Column(db.Integer,default=0, nullable=False)
-    geyser = db.Column(db.Integer,default=0, nullable=False)
-    gas_stove = db.Column(db.Integer,default=0, nullable=False)
-    sofa = db.Column(db.Integer,default=0, nullable=False)
+    furnishing_type = db.Column(db.String(10),default=0, nullable=False)
+    refrigerator = db.Column(db.Boolean,default=0, nullable=False)
+    washing_machine = db.Column(db.Boolean, nullable=False)
+    bedrooms = db.Column(db.String(10), nullable=False)
+    ac = db.Column(db.Boolean,default=0, nullable=False)
+    almirah = db.Column(db.Boolean,default=0, nullable=False)
+    bed = db.Column(db.Boolean,default=0, nullable=False)
+    geyser = db.Column(db.Boolean,default=0, nullable=False)
+    gas_stove = db.Column(db.Boolean,default=0, nullable=False)
+    sofa = db.Column(db.Boolean,default=0, nullable=False)
     availability = db.Column(db.Integer,default=0, nullable=False)
     landloard_nature = db.Column(db.Text,nullable=True)
     neighbours_nature = db.Column(db.Text,nullable=True)
@@ -78,7 +78,7 @@ class Post(db.Model):
 
 
     def __repr__(self):
-        return f"Post('{self.title}', '{self.date_posted}')"
+        return f"Post('{self.user_id}', '{self.date_posted}')"
 
 
 @app.route("/")
@@ -98,7 +98,7 @@ def reward():
     return render_template('reward.html')
 
 
-from forms import RegistrationForm, LoginForm,Post_info
+from forms import RegistrationForm, LoginForm, Post_info
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -145,6 +145,8 @@ def profile():
 
 
 def save_picture(form_picture):
+    if not form_picture:
+        return "static/default.jpeg"
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
     picture_fn = random_hex + f_ext
@@ -160,27 +162,18 @@ def save_picture(form_picture):
 
 
 @app.route("/post", methods=['GET', 'POST'])
+@login_required
 def post():
     form = Post_info()
     if form.validate_on_submit():
-        if form.picture1.data:
-            picture_file = save_picture(form.picture1.data)
-            current_user.image1 = picture_file
-        if form.picture2.data:
-            picture_file = save_picture(form.picture2.data)
-            current_user.image2 = picture_file
-        if form.picture3.data:
-            picture_file = save_picture(form.picture3.data)
-            current_user.image3 = picture_file
-        if form.pictur4.data:
-            picture_file = save_picture(form.picture4.data)
-            current_user.image4 = picture_file
-        if form.picture5.data:
-            picture_file = save_picture(form.picture5.data)
-            current_user.image5 = picture_file
-
-            flash('Your post posted successfully!', 'success')
-            return redirect(url_for('#'))
+       post = Post(author = current_user , state= form.state.data , city = form.city.data , area = form.area.data, date_posted= datetime.now(), pincode=form.pincode.data, rent =form.rent.data, furnishing_type = form.furnishing_type.data , refrigerator = form.refrigerator.data , washing_machine = form.washing_machine.data , 
+                ac=form.ac.data , almirah=form.almirah.data, bed=form.bed.data, geyser=form.geyser.data, gas_stove=form.gas_stove.data, sofa=form.sofa.data, availability=1, landloard_nature=form.landloard_nature.data, 
+                neighbours_nature=form.neighbours_nature.data, comments=form.comments.data, flat_rating=form.flat_rating.data, nearby=form.nearby.data, picture1=save_picture(form.picture1.data), 
+                picture2=save_picture(form.picture2.data), picture3=save_picture(form.picture3.data), picture4=save_picture(form.picture4.data), picture5=save_picture(form.picture5.data), bedrooms=form.bedrooms.data)
+       db.session.add(post)
+       db.session.commit()
+       flash('Your post posted successfully!', 'success')
+       return redirect(url_for('home'))
         
     return render_template('post.html', form=form)
 
