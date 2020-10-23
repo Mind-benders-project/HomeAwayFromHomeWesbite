@@ -1,1 +1,50 @@
-account.html
+{% extends "layout.html" %}
+{% block content %}
+    
+
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        <div class="media-body" style="font-size: large;">
+          <h2 class="account-heading">{{ current_user.user }}</h2>
+          <p class="text-secondary">{{ current_user.email }}</p>
+          <p class="text-secondary">{{ current_user.contact }}</p>
+
+          {% if current_user.role == 0 %}
+            <p class="text-secondary">Landlord</p>            
+          {% else %}
+            <p class="text-secondary">Tenant</p>
+          {% endif %}
+
+        </div>
+      </div>
+        
+    </div>
+
+{% endblock content %}
+
+{% block content1 %}
+
+    <div class="content-section">
+            <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Update Profile Picture</legend>
+               
+                <div class="form-group">
+                    {{ form.picture.label() }}
+                    {{ form.picture(class="form-control-file") }}
+                    {% if form.picture.errors %}
+                        {% for error in form.picture.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+          </div>
+
+{% endblock %}
