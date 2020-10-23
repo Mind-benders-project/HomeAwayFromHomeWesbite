@@ -84,7 +84,8 @@ class Post(db.Model):
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    posts= Post.query.all()
+    return render_template('timeline.html' , posts=posts)
 
 
 @app.route("/search")
