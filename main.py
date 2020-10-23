@@ -42,7 +42,7 @@ class User(db.Model, UserMixin):
     posts = db.relationship('Post', backref='author', lazy=True)
 
     def __repr__(self):
-        return f"User('{self.user_name}', '{self.email}', '{self.image_file}')"
+        return f"User('{self.user_name}', '{self.email}', '{self.image_file}', '{self.role}')"
 
 
 class Post(db.Model):
@@ -54,10 +54,10 @@ class Post(db.Model):
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     pincode = db.Column(db.Integer, nullable=False)
     rent = db.Column(db.Integer, nullable=False)
-    furnishing_type = db.Column(db.String(10),default=0, nullable=False)
+    furnishing_type = db.Column(db.Integer,default=0, nullable=False)
     refrigerator = db.Column(db.Boolean,default=0, nullable=False)
     washing_machine = db.Column(db.Boolean, nullable=False)
-    bedrooms = db.Column(db.String(10), nullable=False)
+    bedrooms = db.Column(db.Integer, nullable=False)
     ac = db.Column(db.Boolean,default=0, nullable=False)
     almirah = db.Column(db.Boolean,default=0, nullable=False)
     bed = db.Column(db.Boolean,default=0, nullable=False)
@@ -78,7 +78,7 @@ class Post(db.Model):
 
 
     def __repr__(self):
-        return f"Post('{self.user_id}', '{self.date_posted}')"
+        return f"Post('{self.user_id}', '{self.date_posted}', '{self.picture1}', '{self.bedrooms}', '{self.bed}', '{self.furnishing_type}')"
 
 
 @app.route("/")

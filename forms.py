@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, RadioField, DateField, ValidationError, IntegerField, TextAreaField
-from flask_wtf.file import FileField,FileAllowed
+from flask_wtf.file import FileField, FileAllowed
 from wtforms.validators import DataRequired, Length, Email, EqualTo , Regexp
 # from __main__ import User
 
@@ -63,5 +63,5 @@ class Post_info(FlaskForm):
     picture3 = FileField("Property's Pic", validators=[FileAllowed(['jpg','png','jpeg'])])
     picture4 = FileField("Property's Pic", validators=[FileAllowed(['jpg','png','jpeg'])])
     picture5 = FileField("Property's Pic", validators=[FileAllowed(['jpg','png','jpeg'])])
-    bedrooms = RadioField('Number of Bedrooms', choices=[(4,'4BHK'),(3,'3BHK'),(2,'2BHK'),(1,'1BHK')] , validators=[DataRequired()])
+    bedrooms = RadioField('No. of bedrooms', choices=[(3,'4-BHK'),(2,'3-BHK'),(1,'2-BHK'),(0,'1-BHK')] , validators=[DataRequired()])
     submit = SubmitField('Submit')
