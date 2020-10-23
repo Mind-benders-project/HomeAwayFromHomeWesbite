@@ -54,28 +54,27 @@ class Post(db.Model):
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     pincode = db.Column(db.Integer, nullable=False)
     rent = db.Column(db.Integer, nullable=False)
-    no_of_rooms = db.Column(db.Integer, nullable=False)
-    furnished = db.Column(db.Integer,default=0, nullable=False)
-    refridgerator = db.Column(db.Integer,default=0, nullable=False)
+    no_of_bedrooms = db.Column(db.Integer, nullable=False)
+    furnishing_type = db.Column(db.Integer,default=0, nullable=False)
+    refrigerator = db.Column(db.Integer,default=0, nullable=False)
     washing_machine = db.Column(db.Integer, nullable=False)
     ac = db.Column(db.Integer,default=0, nullable=False)
     almirah = db.Column(db.Integer,default=0, nullable=False)
     bed = db.Column(db.Integer,default=0, nullable=False)
     geyser = db.Column(db.Integer,default=0, nullable=False)
-    sofaset = db.Column(db.Integer,default=0, nullable=False)
+    gas_stove = db.Column(db.Integer,default=0, nullable=False)
+    sofa = db.Column(db.Integer,default=0, nullable=False)
     availability = db.Column(db.Integer,default=0, nullable=False)
-    nature_of_landlord = db.Column(db.Text,nullable=True)
+    landloard_nature = db.Column(db.Text,nullable=True)
+    neighbours_nature = db.Column(db.Text,nullable=True)
     comments = db.Column(db.Text, nullable=True)
     flat_rating =db.Column(db.Integer, default=1, nullable=False)
-    near_by = db.Column(db.Text, nullable=True)
-    image1 = db.Column(db.String(20), nullable=False, default='default.jpeg')
-    image2 = db.Column(db.String(20), nullable=True)
-    image3 = db.Column(db.String(20), nullable=True)
-    image4 = db.Column(db.String(20), nullable=True)
-    image5 = db.Column(db.String(20), nullable=True)
-
-
-
+    nearby = db.Column(db.Text, nullable=True)
+    picture1 = db.Column(db.String(20), nullable=False, default='default.jpeg')
+    picture2 = db.Column(db.String(20), nullable=True)
+    picture3 = db.Column(db.String(20), nullable=True)
+    picture4 = db.Column(db.String(20), nullable=True)
+    picture5 = db.Column(db.String(20), nullable=True)
 
 
     def __repr__(self):
@@ -91,6 +90,13 @@ def home():
 @app.route("/search")
 def search():
     return render_template('search.html')
+
+
+@app.route("/")
+@app.route("/reward")
+def reward():
+    return render_template('reward.html')
+
 
 from forms import RegistrationForm, LoginForm,Post_info
 @app.route("/register", methods=['GET', 'POST'])

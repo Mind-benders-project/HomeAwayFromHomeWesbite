@@ -16,9 +16,9 @@
     <header class="site-header">
 
       <!-- navbar component from getbootstrap.com  -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top mt-0">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top mt-0">
             <div class="container-fluid">
-                <a class="navbar-brand mr-4" href="{{ url_for('home') }}">HomeAwayFromHome</a>
+                <a class="navbar-brand mr-4" href="{{ url_for('home') }}">Home Away From Home</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,7 +34,7 @@
 
                         <li class = "nav-link"> 
 
-                            <a class="nav-link" href="{{ url_for('search') }}">Reward</a>  </li>
+                            <a class="nav-link" href="{{ url_for('reward') }}">Reward</a>  </li>
 
 
                         {% if current_user.is_authenticated %}
@@ -72,7 +72,7 @@
 
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8" style="padding-left: 20%">
           {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
               {% for category, message in messages %}
