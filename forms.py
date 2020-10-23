@@ -65,3 +65,7 @@ class Post_info(FlaskForm):
     picture5 = FileField("Property's Pic", validators=[FileAllowed(['jpg','png','jpeg'])])
     bedrooms = RadioField('No. of bedrooms', choices=[(3,'4-BHK'),(2,'3-BHK'),(1,'2-BHK'),(0,'1-BHK')] , validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+class UpdateProfile(FlaskForm):
+    picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png','jpeg'])])
+    submit = SubmitField('Update')

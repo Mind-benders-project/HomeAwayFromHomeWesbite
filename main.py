@@ -99,7 +99,8 @@ def reward():
     return render_template('reward.html')
 
 
-from forms import RegistrationForm, LoginForm, Post_info
+from forms import RegistrationForm, LoginForm, Post_info, UpdateProfile
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -142,7 +143,23 @@ def logout():
 @app.route("/profile", methods=['GET', 'POST'])
 @login_required
 def profile():
-    return render_template('profile.html', title='Account')
+    form = UpdateProfile()
+    if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
+            current_user.image_file = picture_file
+        db.session.commit()
+        flash('Your account has been updated!', 'success')
+        return redirect(url_for('profile'))
+   
+    image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
+    return render_template('profile.html', image_file=image_file, form=form)
+
+
+
+
+    image_file = url_for('static',filename='profile_pics/'+current_user.image_file)
+    return render_template('profile.html', image_file=image_file)
 
 
 def save_picture(form_picture):
@@ -153,7 +170,7 @@ def save_picture(form_picture):
     picture_fn = random_hex + f_ext
     picture_path = os.path.join(app.root_path, 'static/profile_pics', picture_fn)
 
-    output_size = (125, 125)
+    output_size = (150, 150)
     i = Image.open(form_picture)
     i.thumbnail(output_size)
     i.save(picture_path)
