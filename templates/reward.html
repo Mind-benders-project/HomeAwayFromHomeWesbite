@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div style="border-right: 2px solid black;">
+	<div>
+	
+	<marquee direction="right" scrollamount="5" behavior="alternate">Yaay!! Help other tenants and get rewards or win something cool..</marquee>
+	<br>
+	</div>
+
+	<!-- Rewards images  -->
+	<div style="display: flex;">
+	<div style="flex: 50%; padding: 3%;">
+	<img class="img-fluid img-thumbnail" src="./static/images/0phone.png" alt="iphone" style="width:100%">
+	<font style="font-size:2vw;">Get iPhone using 10,000 coins*</font>
+	</div>
+	<div style="flex: 50%; padding: 3%;">
+	<img class="img-fluid img-thumbnail" src="./static/images/0lap.png" alt="laptop" style="width:100%">
+	<font style="font-size:2vw;">Get Laptop using 5,000 coins*</font>
+	</div>
+	</div>
+	<div style="display: flex;">
+	<div style="flex: 50%; padding: 3%;">
+	<img class="img-fluid img-thumbnail" src="./static/images/0pod.png" alt="earpodes" style="width:100%">
+	<font style="font-size:2vw;">Get Airpods using 1,000 coins*</font>
+	</div>
+	<div style="flex: 50%; padding: 3%;">
+	<img class="img-fluid img-thumbnail" src="./static/images/0head.png" alt="headphones" style="width:100%">
+	<font style="font-size:2vw;">Get Headphones using 800 coins*</font>
+	</div>
+	</div>
+	</div>
+
+{% endblock content %}
+
+{% block content1 %}
+	<div class="content-section" style="margin-bottom:16%;">
+				<legend class="border-bottom mb-4">More about Rewards</legend>
+				<ul>
+					<li>You should have atleast 200 coins to get any* rewards.</li>
+					<li>You should have atleast 800 coins to get one of the shown rewards.</li>
+					<li>You can get boAt-235 wireless bluetooth earphones using 400 coins.</li>
+					<li>You can get 200 INR using 200 coins.</li>
+					<br><p><b>*</b> Currently available in our reward list. </p>
+				</ul>
+    </div>
+    <div class="content-section">
+				<legend class="border-bottom mb-4">How to get your Rewards</legend>
+				<ul>
+					<li>Email us at <b><i>Mindbenders4.0@gmail.com</i></b> when you have minimum 200 coins</li>
+				</ul>
+    </div>
+{% endblock %}

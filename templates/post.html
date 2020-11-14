@@ -1,0 +1,269 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Post</legend>
+                <div class="form-group">
+                    {{ form.state.label(class="form-control-label") }}
+
+                    {% if form.state.errors %}
+                        {{ form.state(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.state.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.state(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.city.label(class="form-control-label") }}
+
+                    {% if form.city.errors %}
+                        {{ form.city(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.city.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.city(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.area.label(class="form-control-label") }}
+
+                    {% if form.area.errors %}
+                        {{ form.area(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.area.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.area(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.pincode.label(class="form-control-label") }}
+
+                    {% if form.pincode.errors %}
+                        {{ form.pincode(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.pincode.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.pincode(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.rent.label(class="form-control-label") }}
+
+                    {% if form.rent.errors %}
+                        {{ form.rent(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.rent.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.rent(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.bedrooms.label() }}
+
+                    {% if form.bedrooms.errors %}
+                        {{ form.bedrooms(class="is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.bedrooms.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.bedrooms() }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.furnishing_type.label() }}
+
+                    {% if form.furnishing_type.errors %}
+                        {{ form.furnishing_type(class="is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.furnishing_type.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.furnishing_type() }}
+                    {% endif %}
+                </div>
+
+                <p>Amenities</p>
+                <div class="form-check">
+                    {{ form.refrigerator(class="form-check-input") }}
+                    {{ form.refrigerator.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.washing_machine(class="form-check-input") }}
+                    {{ form.washing_machine.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.ac(class="form-check-input") }}
+                    {{ form.ac.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.almirah(class="form-check-input") }}
+                    {{ form.almirah.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.bed(class="form-check-input") }}
+                    {{ form.bed.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.geyser(class="form-check-input") }}
+                    {{ form.geyser.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.gas_stove(class="form-check-input") }}
+                    {{ form.gas_stove.label(class="form-check-label") }}
+                </div>
+                <div class="form-check">
+                    {{ form.sofa(class="form-check-input") }}
+                    {{ form.sofa.label(class="form-check-label") }}
+                </div>
+
+
+                <div class="form-group">
+                    {{ form.landloard_nature.label(class="form-control-label") }}
+
+                    {% if form.landloard_nature.errors %}
+                        {{ form.landloard_nature(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.landloard_nature.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.landloard_nature(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.neighbours_nature.label(class="form-control-label") }}
+
+                    {% if form.neighbours_nature.errors %}
+                        {{ form.neighbours_nature(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.neighbours_nature.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.neighbours_nature(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.comments.label(class="form-control-label") }}
+
+                    {% if form.comments.errors %}
+                        {{ form.comments(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.comments.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.comments(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.nearby.label(class="form-control-label") }}
+
+                    {% if form.nearby.errors %}
+                        {{ form.nearby(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.nearby.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.nearby(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.flat_rating.label(class="form-control-label") }}
+
+                    {% if form.flat_rating.errors %}
+                        {{ form.flat_rating(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.nearby.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.flat_rating(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+
+
+
+                <div class="form-group">
+                    {{ form.picture1.label() }}
+                    {{ form.picture1(class="form-control-file") }}
+                    {% if form.picture1.errors %}
+                        {% for error in form.picture1.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.picture2.label() }}
+                    {{ form.picture2(class="form-control-file") }}
+                    {% if form.picture2.errors %}
+                        {% for error in form.picture2.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.picture3.label() }}
+                    {{ form.picture3(class="form-control-file") }}
+                    {% if form.picture3.errors %}
+                        {% for error in form.picture3.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.picture4.label() }}
+                    {{ form.picture4(class="form-control-file") }}
+                    {% if form.picture4.errors %}
+                        {% for error in form.picture4.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.picture5.label() }}
+                    {{ form.picture5(class="form-control-file") }}
+                    {% if form.picture5.errors %}
+                        {% for error in form.picture5.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+    
+{% endblock content %}

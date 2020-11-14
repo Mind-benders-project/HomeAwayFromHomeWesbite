@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HomeAwayFromHome</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+		<!-- USED FOR CROUSEL -->
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<style>
+		/* Make the image fully responsive */
+		.carousel-inner img {
+		width: 100%;
+		height: 100%;
+		}
+		</style>
+</head>
+<body> <!-- REMOVED 45-degree-fabric-light -->
+	<header class="site-header">
+
+	  <!-- navbar component from getbootstrap.com  -->
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top mt-0">
+			<div class="container-fluid">
+				<a class="navbar-brand mr-4" href="{{ url_for('home') }}">Home Away From Home</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class = "nav-link"> 
+
+							<a class="nav-link" href="{{ url_for('home') }}">Home</a>  </li>
+
+						<li class = "nav-link"> 
+
+							<a class="nav-link" href="{{ url_for('search') }}">Search</a>  </li>
+
+						<li class = "nav-link"> 
+
+							<a class="nav-link" href="{{ url_for('reward') }}">Reward</a>  </li>
+
+
+						{% if current_user.is_authenticated %}
+
+							<li class = "nav-link"> 
+
+							<a class="nav-link" href="{{ url_for('post') }}">Post</a>  </li>
+							<li class = "nav-link"> 
+
+							<a class="nav-link" href="{{ url_for('profile') }}">Profile</a>  </li>
+							<li class = "nav-link"> 
+
+							<a class="nav-link" href="{{ url_for('logout') }}">Logout</a>  
+							</li>
+						{% else %}
+
+							<li class = "nav-link"> 
+
+							<a class="nav-link" href="{{ url_for('login') }}">Login</a>  </li>
+							<li class = "nav-link"> 
+
+							<a class="nav-link" href="{{ url_for('register') }}">Register</a>  
+							</li>
+
+						{% endif %}
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+	<main role="main" class="container"> 		<!--REMOVED style="margin-right: 25%;" -->
+		<div class="row" style="display: flex;">
+			<div class="col-md-8">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						{% for category, message in messages %}
+							<div class="alert alert-{{ category }}">
+								{{ message }}
+							</div>
+				 		{% endfor %}
+					{% endif %}
+				{% endwith %}
+
+				<!-- <h1>showing rooms...</h1>-->
+				{% if posts %}            
+					{% for room in posts %}
+						<main role="main" class="container" style="border:2px solid #cecece; margin-top:2%; margin-bottom:6%; border-radius:10px;">
+							<div class="row">
+								<div class="col-md-4" style="margin-top: 1%">
+									<small class="text-muted">Posted by :
+									{% if current_user.id == room.user_id %}
+										  <a href="{{ url_for('profile') }}">{{ room.user_name }}</a>
+									{% else %}
+
+										<a href="{{ url_for('others_profile',user_id = room.user_id) }}">{{ room.user_name }}</a>
+									{% endif %}
+									</small>
+								</div>
+							</div>
+							<div class="row" style="padding: 2%">
+								<div class="col-md-4" style="margin-top: 1%">
+									<!-- <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="static/default.jpeg"> -->
+									<div id="demo{{ room.id }}" class="carousel slide" data-ride="carousel">
+										<!-- Indicators -->
+										<ul class="carousel-indicators">
+											<li data-target="#demo{{ room.id }}" data-slide-to="0" class="active"></li>
+											<li data-target="#demo{{ room.id }}" data-slide-to="1"></li>
+											<li data-target="#demo{{ room.id }}" data-slide-to="2"></li>
+											<li data-target="#demo{{ room.id }}" data-slide-to="3"></li>
+										<li data-target="#demo{{ room.id }}" data-slide-to="4"></li>
+										</ul>
+									  
+									  <!-- The slideshow -->
+										<div class="carousel-inner" style="width: 100%; height:100%;">
+										<div class="carousel-item active">
+											<img src={{ room.picture1 }} alt="Get rooms" width="1100" height="800">
+										</div>
+										<div class="carousel-item">
+											<img src={{ room.picture2 }} alt="Search for rooms" width="1100" height="800">
+										</div>
+										<div class="carousel-item">
+											<img src={{ room.picture3 }} alt="Search for rooms" width="1100" height="800">
+										</div>
+										<div class="carousel-item">
+											<img src={{ room.picture4 }} alt="Search for rooms" width="1100" height="800">
+										</div>
+										<div class="carousel-item">
+											<img src={{ room.picture5 }} alt="Search for rooms" width="1100" height="800">
+										</div>
+									</div>
+									  
+									  <!-- Left and right controls -->
+										<a class="carousel-control-prev" href="#demo{{ room.id }}" data-slide="prev">
+											<span class="carousel-control-prev-icon"></span>
+										</a>
+										<a class="carousel-control-next" href="#demo{{ room.id }}" data-slide="next">
+											<span class="carousel-control-next-icon"></span>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-4 border-right" style="margin-top: 1%">
+									<p class="article-content">{{ room.area }}, {{ room.city }}</p>
+									<p class="article-content">{{ room.state }}, {{ room.pincode }}</p>
+
+									<!-- Flate Type : BHK          -->
+									{% if room.bedrooms == 0 %}
+										<p> Flat Type : 1-BHK </p>
+									{% elif room.bedrooms == 1 %}
+										<p> Flat Type : 2-BHK </p>
+									{% elif room.bedrooms == 2 %}
+										<p> Flat Type : 3-BHK</p>
+									{% elif room.bedrooms == 3 %}
+										<p> Flat Type : 4-BHK </p>   
+									{% endif %}
+
+									<!-- <p class="article-content">Nearby : {{ room.nearby }}</p> -->
+									<p class="article-content">Rent : {{ room.rent }}</p>
+									<p class="article-content">Rating : {{ room.flat_rating }}/10</p>
+									<p class="article-content">Landlord's Nature : {{ room.landloard_nature }}</p>
+
+									{% if room.neighbours_nature %}
+										<p class="article-content">Neighbour's Nature : {{ room.landloard_nature }}</p>
+									{% endif %}
+									{% if room.comments %}
+										<p class="article-content">Comments : {{ room.comments }}</p>
+									{% endif %}
+									<p class="article-content">Nearby : {{ room.nearby }}</p>
+
+								</div>
+								<div class="col-md-4" style="margin-top: 1%">
+
+									<!-- Furnishing Type -->
+
+									{% if room.furnishing_type == 0 %}
+										<p> Furnishing Type : Not-Furnished </p>
+									{% elif room.furnishing_type == 1 %}
+										<p> Furnishing Type : Semi-Furnished </p>
+									{% elif room.furnishing_type == 2 %}
+										<p> Furnishing Type : Fully-Furnished </p>  
+									{% endif %}
+
+									<!-- Checkbox Furniture -->
+									{% if room.refrigerator == True %}
+										<p> <span> &#9745; </span> &nbsp Refrigerator </p>
+									{% endif %}
+									{% if room.washing_machine == True %}
+										<p> <span> &#9745; </span> &nbsp Washing Machine </p>
+									{% endif %}
+									{% if room.ac == True %}
+										<p> <span> &#9745; </span> &nbsp Air Conditioner </p>
+									{% endif %}
+									{% if room.almirah == True %}
+										<p> <span> &#9745; </span> &nbsp Almirah </p>
+									{% endif %}
+									{% if room.bed == True %}
+										<p> <span> &#9745; </span> &nbsp Bed </p> 
+									{% endif %} 
+									{% if room.geyser == True %}
+										<p> <span> &#9745; </span> &nbsp Geyser </p>
+									{% endif %}
+									{% if room.gas_stove == True %}
+										<p> <span> &#9745; </span> &nbsp Gas Stove </p>
+									{% endif %}
+									{% if room.sofa == True %}
+										<p> <span> &#9745; </span> &nbsp Sofa Set </p>
+									{% endif %}
+								</div>
+							</div>
+						</main>
+					{% endfor %}
+				{% else %}
+				<br><br>
+				<h3>Sorry, No Post to show in this area..</h3>
+		  		{% endif %}
+			</div>
+			{% if posts %}
+			<div class="col-md-4 border-left" style="margin-top: 5%">
+				<div class="content-section">
+					<form method="POST" action="" enctype="multipart/form-data">
+						{{ form.hidden_tag() }}
+						<fieldset class="form-group">
+							<legend class="border-bottom mb-4">Apply Filters</legend>
+							<p><b>Please select range of rent:</b></p>
+							<div class="row">
+								<div class="form-group col-md-6">
+
+									{{ form.minrent.label }}:
+								       {{ form.minrent(type="range", value="1000", min="1000", max="50000", oninput="this.nextElementSibling.value = this.value") }}
+
+								       	{% if form.minrent.data %}
+										<output for="minrent">{{ form.minrent.data }}</output>
+										{% else %}
+										<output for="minrent">1000</output>
+										{% endif %}
+								       
+								</div>
+								<div class="form-group col-md-6">
+
+									{{ form.maxrent.label }}:
+								       {{ form.maxrent(type="range", value="50000", min="1000", max="50000", oninput="this.nextElementSibling.value = this.value") }}
+
+								       	{% if form.maxrent.data %}
+										<output for="maxrent">{{ form.maxrent.data }}</output>
+										{% else %}
+										<output for="maxrent">50000</output>
+										{% endif %}
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="form-group col-md-8">
+									<b>No. of bedrooms</b>
+
+									<div class="col-md-8" style="padding-left: 0">
+									<div class="form-check">
+										{{ form.bedrooms4(class="form-check-input") }}
+										{{ form.bedrooms4.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.bedrooms3(class="form-check-input") }}
+										{{ form.bedrooms3.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.bedrooms2(class="form-check-input") }}
+										{{ form.bedrooms2.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.bedrooms(class="form-check-input") }}
+										{{ form.bedrooms.label(class="form-check-label") }}
+									</div>
+								</div>
+
+								</div>
+								<div class="form-group col-md-9">
+									<b> {{ form.furnishing_type.label() }}</b>
+
+
+									<div class="col-md-9" style="padding-left: 0">
+									<div class="form-check">
+										{{ form.furnishing_type(class="form-check-input") }}
+										{{ form.furnishing_type.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.furnishing_type1(class="form-check-input") }}
+										{{ form.furnishing_type1.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.furnishing_type2(class="form-check-input") }}
+										{{ form.furnishing_type2.label(class="form-check-label") }}
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+
+							<div>
+								<p><b>Furniture, Appliances & Electronics:</b></p>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-check">
+										{{ form.refrigerator(class="form-check-input") }}
+										{{ form.refrigerator.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.washing_machine(class="form-check-input") }}
+										{{ form.washing_machine.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.ac(class="form-check-input") }}
+										{{ form.ac.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.almirah(class="form-check-input") }}
+										{{ form.almirah.label(class="form-check-label") }}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-check">
+										{{ form.bed(class="form-check-input") }}
+										{{ form.bed.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.geyser(class="form-check-input") }}
+										{{ form.geyser.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.gas_stove(class="form-check-input") }}
+										{{ form.gas_stove.label(class="form-check-label") }}
+									</div>
+									<div class="form-check">
+										{{ form.sofa(class="form-check-input") }}
+										{{ form.sofa.label(class="form-check-label") }}
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="form-group">
+								{{ form.flat_rating.label }}:
+								       {{ form.flat_rating(type="range", value="1", min="1", max="10", oninput="this.nextElementSibling.value = this.value") }}
+
+								       	{% if form.flat_rating.data %}
+										<output for="flat_rating">{{ form.flat_rating.data }}</output>
+										{% else %}
+										<output for="flat_rating">1</output>
+										{% endif %}
+							</div>
+						</fieldset>
+
+						<div class="form-group">
+							{{ form.submit(class="btn btn-outline-info") }}
+						</div>
+					</form>
+				</div>
+			</div>
+		  	{% endif %}
+		</div>
+	</main>
+</body>
+</html>
