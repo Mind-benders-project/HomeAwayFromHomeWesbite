@@ -174,21 +174,19 @@
 								  <!-- The slideshow -->
 									<div class="carousel-inner" style="width: 100%; height:100%;">
 										<div class="carousel-item active">
-												<img src= {{ room.picture1 }} alt="Get rooms" width="1100" height="800">
+												<img src= {{ room.picture1 }} width="1100" height="800">
 											</div>
 											<div class="carousel-item">
-												<img src={{ room.picture2 }} alt="Search for rooms" width="1100" height="800">
+												<img src={{ room.picture2 }} width="1100" height="800">
 											</div>
 											<div class="carousel-item">
-												<img alt="" class="u-blog-control u-exfilenamepanded-width u-image u-image-default u-image-1" 
-												src="{{ room.picture3 }}>
+												<img src={{ room.picture3 }} width="1100" height="800">
 											</div>
 											<div class="carousel-item">
-												<img src={{ room.picture4 }} alt="Search for rooms" width="1100" height="800">
+												<img src={{ room.picture4 }} width="1100" height="800">
 											</div>
 											<div class="carousel-item">
-												<img alt="" class="u-blog-control u-exfilenamepanded-width u-image u-image-default u-image-1" 
-												src={{ room.picture5 }}>
+												<img src={{ room.picture5 }}  width="1100" height="800">
 											</div>
 									</div>
 								  
@@ -222,7 +220,7 @@
 								<p class="article-content">Landlord's Nature : {{ room.landloard_nature }}</p>
 
 								{% if room.neighbours_nature %}
-									<p class="article-content">Neighbour's Nature : {{ room.landloard_nature }}</p>
+									<p class="article-content">Neighbour's Nature : {{ room.neighbours_nature }}</p>
 								{% endif %}
 								{% if room.comments %}
 									<p class="article-content">Comments : {{ room.comments }}</p>
@@ -272,7 +270,7 @@
 				<br>
 			{% else %}
 			<br><br>
-			<h3>There is no Post in database..(Just for Mindbenders)</h3>
+			<h3>No post available..</h3>
 			{% endif %}
 	  </div>
 

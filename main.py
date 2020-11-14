@@ -332,15 +332,9 @@ def others_profile():
                 user.count1=user.count1+1
             a=0
             db.session.commit()
-            flash(user.count5)
-            flash(user.count4)
-            flash(idd)
-            flash(rev.Rating)
-
-
 
         db.session.commit()
-        user.user_rating = round(((user.count5*5 + user.count4*4 + user.count3*3 + user.count2*2 + user.count1*1 -1 )/(user.count5 + user.count4 + user.count3 + user.count2 + user.count1)),2)
+        user.user_rating = round(((user.count5*5 + user.count4*4 + user.count3*3 + user.count2*2 + user.count1*1 -1)/(user.count5 + user.count4 + user.count3 + user.count2 + user.count1 -1)),2)
         db.session.commit()
         user.user_coins = round((user.user_rating * (user.count5 + user.count4 + user.count3 + user.count2 + user.count1) * Post.query.filter_by(user_id=user_id).count())/10,2)
         db.session.commit()
@@ -363,6 +357,7 @@ def save_picture(form_picture):
     output_size = (150, 150)
     i = Image.open(form_picture)
     i.thumbnail(output_size)
+    i = i.resize((150, 150))
     i.save(picture_path)
 
     return picture_fn
