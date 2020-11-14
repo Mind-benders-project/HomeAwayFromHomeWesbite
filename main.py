@@ -82,7 +82,12 @@ class Post(db.Model):
     def __repr__(self):
         return f"Post('{self.user_id}', '{self.date_posted}', '{self.picture1}', '{self.bedrooms}', '{self.bed}', '{self.furnishing_type}')"
 
+class Review(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    Rating = db.Column(db.Integer, nullable=False)
 
+    def __repr__(self):
+        return f"Review('{self.id}', '{self.Rating}')"
 
 @app.route("/")
 @app.route("/home")
@@ -102,7 +107,6 @@ global state
 def search():
     form = SearchForm()
     if form.validate_on_submit():
-        # searched = Post.query.filter_by(city=form.city.data) 
         global searched
         global area
         global city
@@ -131,7 +135,7 @@ def show_post():
         return redirect(url_for('show_post'))
     else:
         if form.validate_on_submit():
-            nofilter = 0
+            nofilter = 1
             minrent = form.minrent.data
             maxrent = form.maxrent.data
             flat_rating = form.flat_rating.data
@@ -189,9 +193,8 @@ def show_post():
 
             br = "("+br+")"
             str1 = str1 + br
-
             searched1 = Post.query.filter(text(str1)).all()
-            return render_template('show_post.html',form=form, posts=searched1)
+            return render_template('show_post.html',form=Filter(), posts=searched1)
 
     return render_template('show_post.html',form=form, posts=searched)
 
@@ -272,20 +275,72 @@ def others_profile():
     form = OthersProfile()
     user_id=request.args.get('user_id')
     user = User.query.get(user_id)
+    a=0
     if form.validate_on_submit():
         if form.rating.data== '4':
-            user.count5= user.count5+1
-        elif form.rating.data == 3:
-            user.count4= user.count4+1
-        elif form.rating.data == 2:
-            user.count3= user.count3+1
-        elif form.rating.data== 1:
-            user.count2= user.count2+1
-        else :
-            user.count1= user.count1+1
+            a=5
+        elif form.rating.data == '3':
+            a=4
+        elif form.rating.data == '2':
+            a=3
+        elif form.rating.data== '1':
+            a=2
+        elif form.rating.data== '0':
+            a=1
+
+
+        idd = (current_user.id*100000) + int(user_id)
+
+        if (Review.query.filter(Review.id==idd).count() == 0 ):
+            if(a==5):
+                user.count5=user.count5+1
+            elif(a==4):
+                user.count4=user.count4+1
+            elif(a==3):
+                user.count3=user.count3+1
+            elif(a==2):
+                user.count2=user.count2+1
+            elif(a==1):
+                user.count1=user.count1+1
+            review = Review(id=idd , Rating=a )
+            db.session.add(review)
+            db.session.commit()
+        else:
+            rev = Review.query.get(idd)
+            prev_rating= rev.Rating
+            if(prev_rating==5):
+                user.count5=user.count5-1
+            elif(prev_rating==4):
+                user.count4=user.count4-1
+            elif(prev_rating==3):
+                user.count3=user.count3-1
+            elif(prev_rating==2):
+                user.count2=user.count2-1
+            elif(prev_rating==1):
+                user.count1=user.count1-1
+            db.session.commit()
+            rev.Rating=a
+            if(a==5):
+                user.count5=user.count5+1
+            elif(a==4):
+                user.count4=user.count4+1
+            elif(a==3):
+                user.count3=user.count3+1
+            elif(a==2):
+                user.count2=user.count2+1
+            elif(a==1):
+                user.count1=user.count1+1
+            a=0
+            db.session.commit()
+            flash(user.count5)
+            flash(user.count4)
+            flash(idd)
+            flash(rev.Rating)
+
+
 
         db.session.commit()
-        user.user_rating = round(((user.count5*5 + user.count4*4 + user.count3*3 + user.count2*2 + user.count1*1 )/(user.count5 + user.count4 + user.count3 + user.count2 + user.count1)),2)
+        user.user_rating = round(((user.count5*5 + user.count4*4 + user.count3*3 + user.count2*2 + user.count1*1 -1 )/(user.count5 + user.count4 + user.count3 + user.count2 + user.count1)),2)
         db.session.commit()
         user.user_coins = round((user.user_rating * (user.count5 + user.count4 + user.count3 + user.count2 + user.count1) * Post.query.filter_by(user_id=user_id).count())/10,2)
         db.session.commit()
@@ -315,17 +370,13 @@ def save_picture(form_picture):
 def save_post_picture(form_picture):
     if not form_picture:
         image = url_for('static', filename='posted_pics/' + "default.png")
-        # i = Image.open(image)
-        # i = i.resize((1100, 800))
         return image
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
     picture_fn = random_hex + f_ext
     picture_path = os.path.join(app.root_path, 'static/posted_pics', picture_fn)
 
-    # output_size = (150, 150)
     i = Image.open(form_picture)
-    # i.thumbnail(output_size)
     i = i.resize((1100, 800))
     i.save(picture_path)
 
