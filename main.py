@@ -131,12 +131,12 @@ def show_post():
         return redirect(url_for('show_post'))
     else:
         if form.validate_on_submit():
-            nofilter == 0
+            nofilter = 0
             minrent = form.minrent.data
             maxrent = form.maxrent.data
             flat_rating = form.flat_rating.data
 
-            str1 = "(Post.area==area) & (Post.city==city) & (Post.state==state) & "
+            str1 = "(Post.area=="+"'"+area+"'"+") & (Post.city=="+"'"+city+"'"+") & (Post.state=="+"'"+state+"'"+") & "
 
             str1 = str1+ "(Post.rent >="+str(minrent)+") & (Post.rent <="+str(maxrent)+") & (Post.flat_rating >="+str(flat_rating)+") & "
 
