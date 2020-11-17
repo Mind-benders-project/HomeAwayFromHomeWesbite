@@ -217,6 +217,7 @@
 								<!-- <p class="article-content">Nearby : {{ room.nearby }}</p> -->
 								<p class="article-content">Rent : {{ room.rent }}</p>
 								<p class="article-content">Rating : {{ room.flat_rating }}/10</p>
+								<p class="article-content">Posted on : {{ room.date_posted.strftime('%d-%m-%Y') }}</p>
 								<p class="article-content">Landlord's Nature : {{ room.landloard_nature }}</p>
 
 								{% if room.neighbours_nature %}
