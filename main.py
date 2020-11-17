@@ -1,8 +1,12 @@
 import os
 import secrets 
+'''secrets is imported to assign a secrete key for security of cookies'''
 from PIL import Image 
+'''pillow is imported for resizing image'''
 from flask import Flask, render_template, url_for, flash, redirect, request 
+''' imports various modules from flask'''
 from datetime import datetime 
+''' Used for getting current date and time'''
 from sqlalchemy import text 
 ''' imports text from sqlalchemy that will convert a string to text which further can be used as as sql query '''
 from flask_sqlalchemy import SQLAlchemy 
@@ -12,10 +16,7 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin,login_user, current_user, logout_user, login_required 
 ''' these are various login related modules which helps in implementing trivial tasks related to login and signup'''
 
-'''secrets is imported to assign a secrete key for security of cookies'''
-'''pillow is imported for resizing image'''
-''' imports various modules from flask'''
-''' Used for getting current date and time'''
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245' 
 ''' secrete_key will protect against modifying cookies and cross-site requests, forgery attacks'''
