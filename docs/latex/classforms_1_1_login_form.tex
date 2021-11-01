@@ -1,0 +1,62 @@
+\hypertarget{classforms_1_1_login_form}{}\doxysection{forms.\+Login\+Form Class Reference}
+\label{classforms_1_1_login_form}\index{forms.LoginForm@{forms.LoginForm}}
+Inheritance diagram for forms.\+Login\+Form\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classforms_1_1_login_form}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classforms_1_1_login_form_a2207dae7014012c0af66543ab8b26248}{email}}
+\item 
+\mbox{\hyperlink{classforms_1_1_login_form_a473ff6584bce09ed88cfb0f6ab0488e0}{password}} = Password\+Field(\textquotesingle{}Password\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_login_form_a9952f5c0ed451440550a86fa7c6f686a}{submit}} = Submit\+Field(\textquotesingle{}Login\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb} This class creates a form for login purpose , inherits from class FlaskForm \end{DoxyVerb}
+
+
+\begin{DoxyVerb} variable email stores input as string, that is, email of user who is trying to login \end{DoxyVerb}
+
+
+\begin{DoxyVerb} accepts password of user who is trying to login \end{DoxyVerb}
+
+
+\begin{DoxyVerb} SubmitField to submit the form that has email and password to initialize login \end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classforms_1_1_login_form_a2207dae7014012c0af66543ab8b26248}\label{classforms_1_1_login_form_a2207dae7014012c0af66543ab8b26248}} 
+\index{forms.LoginForm@{forms.LoginForm}!email@{email}}
+\index{email@{email}!forms.LoginForm@{forms.LoginForm}}
+\doxysubsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily forms.\+Login\+Form.\+email\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  StringField(\textcolor{stringliteral}{'Email'},}
+\DoxyCodeLine{                        validators=[DataRequired(), Email()])}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classforms_1_1_login_form_a473ff6584bce09ed88cfb0f6ab0488e0}\label{classforms_1_1_login_form_a473ff6584bce09ed88cfb0f6ab0488e0}} 
+\index{forms.LoginForm@{forms.LoginForm}!password@{password}}
+\index{password@{password}!forms.LoginForm@{forms.LoginForm}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily forms.\+Login\+Form.\+password = Password\+Field(\textquotesingle{}Password\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_login_form_a9952f5c0ed451440550a86fa7c6f686a}\label{classforms_1_1_login_form_a9952f5c0ed451440550a86fa7c6f686a}} 
+\index{forms.LoginForm@{forms.LoginForm}!submit@{submit}}
+\index{submit@{submit}!forms.LoginForm@{forms.LoginForm}}
+\doxysubsubsection{\texorpdfstring{submit}{submit}}
+{\footnotesize\ttfamily forms.\+Login\+Form.\+submit = Submit\+Field(\textquotesingle{}Login\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Home\+Away\+From\+Home\+Wesbite-\/master/\mbox{\hyperlink{forms_8py}{forms.\+py}}\end{DoxyCompactItemize}

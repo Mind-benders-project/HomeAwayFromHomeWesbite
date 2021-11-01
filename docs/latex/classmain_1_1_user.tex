@@ -1,0 +1,193 @@
+\hypertarget{classmain_1_1_user}{}\doxysection{main.\+User Class Reference}
+\label{classmain_1_1_user}\index{main.User@{main.User}}
+Inheritance diagram for main.\+User\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1_user}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classmain_1_1_user_a677031d07172d618c7ef3d2b047b659e}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_user_af213bc1240b634425b1b571d6bccc561}{id}} = db.\+Column(db.\+Integer, primary\+\_\+key=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a1126d60aeeb7d6cac30e1309da1390cf}{user\+\_\+name}} = db.\+Column(db.\+String(20), nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a457cf334096a72a5fe99ea3281d67468}{email}} = db.\+Column(db.\+String(120), unique=True, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a05dcd5e7f7c00cfdec4500dfc12791a3}{contact}} = db.\+Column(db.\+Integer, unique=True, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a0d159c05abe8c4cc76a917b1374d3903}{image\+\_\+file}} = db.\+Column(db.\+String(20), nullable=False, default=\textquotesingle{}default.\+jpeg\textquotesingle{})
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a9abd849dfbbab016a293106b08043683}{password}} = db.\+Column(db.\+String(60), nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a680946cec062279465e5f89b4740e989}{user\+\_\+rating}} = db.\+Column(db.\+Float, default=1, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a3ea45895653d6d4205a6acbebf8614dd}{user\+\_\+coins}} = db.\+Column(db.\+Integer, default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a6ece6fa87620136a38d594a182cdf47e}{role}} = db.\+Column(db.\+Integer, default=1, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a6ed5a1245336578f5e6acad095da95e0}{dob}} = db.\+Column(db.\+String(60), nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_ac82a06332c72bd33fa5832bdded732ef}{count5}} = db.\+Column(db.\+Integer, default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_adc7b0757259b6c29969182eb4ab49ed9}{count4}} = db.\+Column(db.\+Integer, default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a062df636a099ad6966f700b81badabba}{count3}} = db.\+Column(db.\+Integer, default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a4130e1be78e90f2fddc0e5b8d0b23221}{count2}} = db.\+Column(db.\+Integer, default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a933b69265fc8be8a8e92b3e28c9e374a}{count1}} = db.\+Column(db.\+Integer, default=1, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_user_a740cbc9dc2033f53527aa1e243d42db8}{posts}} = db.\+relationship(\textquotesingle{}\mbox{\hyperlink{classmain_1_1_post}{Post}}\textquotesingle{}, backref=\textquotesingle{}author\textquotesingle{}, lazy=True)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}stores all the details of user ,inherits db.Model for our database structure and 
+UserMixin for authentication purpose 
+ This class acts as a table (relation) in our database. following attributes 
+acts as column in our table
+ 'id' is predefined name for id column in sqlalchemy ,it is autoincrement in nature
+ by default , db.Column makes it a column in our database db for table 'User'. First argument
+  passed gives the Datatype of the values that this coulmn will store, second argument 'primary key'
+   is set true to make this attribute a primary key for this class(table)
+   column Names are:
+            user_name  : Used to store user Name ,
+            email  : Used to store user email ,
+            contact  : Used to store user contact number, 
+            imagefile  : Used to store user image ,
+            password   : Used to store user password ,
+            user_rating  : Used to store user rating ,
+            user_coins  : Used to store user coins , 
+            role  : Used to store user role 
+            dob  : Used to store user dob ,
+            count5  : stores how many user gave 5 rating to the user
+            count4  : stores how many user gave 4 rating to the user,
+            count3  : stores how many user gave 3 rating to the user
+            count2  : stores how many user gave 2 rating to the user
+            count1  : stores how many user gave 1 rating to the user
+
+   
+
+this 'posts' is an object for relationship between two classes 'Post' and 'User' .There is a 
+foreign key in class 'Post' which is refereing to a column of class 'User' \end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1_user_a677031d07172d618c7ef3d2b047b659e}\label{classmain_1_1_user_a677031d07172d618c7ef3d2b047b659e}} 
+\index{main.User@{main.User}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def main.\+User.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}specific columns in return will be shown when a instance of this class is printed\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmain_1_1_user_a05dcd5e7f7c00cfdec4500dfc12791a3}\label{classmain_1_1_user_a05dcd5e7f7c00cfdec4500dfc12791a3}} 
+\index{main.User@{main.User}!contact@{contact}}
+\index{contact@{contact}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{contact}{contact}}
+{\footnotesize\ttfamily main.\+User.\+contact = db.\+Column(db.\+Integer, unique=True, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a933b69265fc8be8a8e92b3e28c9e374a}\label{classmain_1_1_user_a933b69265fc8be8a8e92b3e28c9e374a}} 
+\index{main.User@{main.User}!count1@{count1}}
+\index{count1@{count1}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{count1}{count1}}
+{\footnotesize\ttfamily main.\+User.\+count1 = db.\+Column(db.\+Integer, default=1, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a4130e1be78e90f2fddc0e5b8d0b23221}\label{classmain_1_1_user_a4130e1be78e90f2fddc0e5b8d0b23221}} 
+\index{main.User@{main.User}!count2@{count2}}
+\index{count2@{count2}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{count2}{count2}}
+{\footnotesize\ttfamily main.\+User.\+count2 = db.\+Column(db.\+Integer, default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a062df636a099ad6966f700b81badabba}\label{classmain_1_1_user_a062df636a099ad6966f700b81badabba}} 
+\index{main.User@{main.User}!count3@{count3}}
+\index{count3@{count3}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{count3}{count3}}
+{\footnotesize\ttfamily main.\+User.\+count3 = db.\+Column(db.\+Integer, default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_adc7b0757259b6c29969182eb4ab49ed9}\label{classmain_1_1_user_adc7b0757259b6c29969182eb4ab49ed9}} 
+\index{main.User@{main.User}!count4@{count4}}
+\index{count4@{count4}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{count4}{count4}}
+{\footnotesize\ttfamily main.\+User.\+count4 = db.\+Column(db.\+Integer, default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_ac82a06332c72bd33fa5832bdded732ef}\label{classmain_1_1_user_ac82a06332c72bd33fa5832bdded732ef}} 
+\index{main.User@{main.User}!count5@{count5}}
+\index{count5@{count5}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{count5}{count5}}
+{\footnotesize\ttfamily main.\+User.\+count5 = db.\+Column(db.\+Integer, default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a6ed5a1245336578f5e6acad095da95e0}\label{classmain_1_1_user_a6ed5a1245336578f5e6acad095da95e0}} 
+\index{main.User@{main.User}!dob@{dob}}
+\index{dob@{dob}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{dob}{dob}}
+{\footnotesize\ttfamily main.\+User.\+dob = db.\+Column(db.\+String(60), nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a457cf334096a72a5fe99ea3281d67468}\label{classmain_1_1_user_a457cf334096a72a5fe99ea3281d67468}} 
+\index{main.User@{main.User}!email@{email}}
+\index{email@{email}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily main.\+User.\+email = db.\+Column(db.\+String(120), unique=True, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_af213bc1240b634425b1b571d6bccc561}\label{classmain_1_1_user_af213bc1240b634425b1b571d6bccc561}} 
+\index{main.User@{main.User}!id@{id}}
+\index{id@{id}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily main.\+User.\+id = db.\+Column(db.\+Integer, primary\+\_\+key=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a0d159c05abe8c4cc76a917b1374d3903}\label{classmain_1_1_user_a0d159c05abe8c4cc76a917b1374d3903}} 
+\index{main.User@{main.User}!image\_file@{image\_file}}
+\index{image\_file@{image\_file}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{image\_file}{image\_file}}
+{\footnotesize\ttfamily main.\+User.\+image\+\_\+file = db.\+Column(db.\+String(20), nullable=False, default=\textquotesingle{}default.\+jpeg\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a9abd849dfbbab016a293106b08043683}\label{classmain_1_1_user_a9abd849dfbbab016a293106b08043683}} 
+\index{main.User@{main.User}!password@{password}}
+\index{password@{password}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily main.\+User.\+password = db.\+Column(db.\+String(60), nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a740cbc9dc2033f53527aa1e243d42db8}\label{classmain_1_1_user_a740cbc9dc2033f53527aa1e243d42db8}} 
+\index{main.User@{main.User}!posts@{posts}}
+\index{posts@{posts}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{posts}{posts}}
+{\footnotesize\ttfamily main.\+User.\+posts = db.\+relationship(\textquotesingle{}\mbox{\hyperlink{classmain_1_1_post}{Post}}\textquotesingle{}, backref=\textquotesingle{}author\textquotesingle{}, lazy=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a6ece6fa87620136a38d594a182cdf47e}\label{classmain_1_1_user_a6ece6fa87620136a38d594a182cdf47e}} 
+\index{main.User@{main.User}!role@{role}}
+\index{role@{role}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{role}{role}}
+{\footnotesize\ttfamily main.\+User.\+role = db.\+Column(db.\+Integer, default=1, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a3ea45895653d6d4205a6acbebf8614dd}\label{classmain_1_1_user_a3ea45895653d6d4205a6acbebf8614dd}} 
+\index{main.User@{main.User}!user\_coins@{user\_coins}}
+\index{user\_coins@{user\_coins}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{user\_coins}{user\_coins}}
+{\footnotesize\ttfamily main.\+User.\+user\+\_\+coins = db.\+Column(db.\+Integer, default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a1126d60aeeb7d6cac30e1309da1390cf}\label{classmain_1_1_user_a1126d60aeeb7d6cac30e1309da1390cf}} 
+\index{main.User@{main.User}!user\_name@{user\_name}}
+\index{user\_name@{user\_name}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{user\_name}{user\_name}}
+{\footnotesize\ttfamily main.\+User.\+user\+\_\+name = db.\+Column(db.\+String(20), nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_user_a680946cec062279465e5f89b4740e989}\label{classmain_1_1_user_a680946cec062279465e5f89b4740e989}} 
+\index{main.User@{main.User}!user\_rating@{user\_rating}}
+\index{user\_rating@{user\_rating}!main.User@{main.User}}
+\doxysubsubsection{\texorpdfstring{user\_rating}{user\_rating}}
+{\footnotesize\ttfamily main.\+User.\+user\+\_\+rating = db.\+Column(db.\+Float, default=1, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Home\+Away\+From\+Home\+Wesbite-\/master/\mbox{\hyperlink{main_8py}{main.\+py}}\end{DoxyCompactItemize}
