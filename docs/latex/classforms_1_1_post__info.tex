@@ -1,0 +1,255 @@
+\hypertarget{classforms_1_1_post__info}{}\doxysection{forms.\+Post\+\_\+info Class Reference}
+\label{classforms_1_1_post__info}\index{forms.Post\_info@{forms.Post\_info}}
+Inheritance diagram for forms.\+Post\+\_\+info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classforms_1_1_post__info}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_ab56599b64d7b36d68f97ce73c87d3376}{state}} = String\+Field(\textquotesingle{}State\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a49bb14eeae5c11707fd31312afb761a9}{city}} = String\+Field(\textquotesingle{}City\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_ac34467984be070f9941dfc9e5069ae28}{area}} = String\+Field(\textquotesingle{}Area\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_aec63060eccbd5224e9dfef46b98d0599}{pincode}} = Integer\+Field(\textquotesingle{}Pincode\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a88f3315b3cc2c24ab504629a3894f7a0}{rent}} = Integer\+Field(\textquotesingle{}Rent\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a7b91744323d51060d49c7d7cfbc43796}{furnishing\+\_\+type}} = Radio\+Field(\textquotesingle{}Furnishing Type\textquotesingle{}, choices=\mbox{[}(2,\textquotesingle{}Fully-\/Furnished\textquotesingle{}),(1,\textquotesingle{}Semi-\/Furnished\textquotesingle{}),(0,\textquotesingle{}Not furnished\textquotesingle{})\mbox{]} , validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a9c4c98c854a5ad4fac4860eb47400194}{refrigerator}} = Boolean\+Field(\textquotesingle{}Refrigerator\textquotesingle{})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a3731c5f9445fdc7716c59d2b76c5302f}{washing\+\_\+machine}} = Boolean\+Field(\textquotesingle{}Washing Machine\textquotesingle{})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_af2fee132517c28b170d697f280f9fad9}{ac}} = Boolean\+Field(\textquotesingle{}AC\textquotesingle{})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a97ddb190572a9f31a6eeee700809f3d1}{almirah}} = Boolean\+Field(\textquotesingle{}Almirah\textquotesingle{})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a4330dcf8f80624d8169ab071eb7baa3e}{bed}} = Boolean\+Field(\textquotesingle{}Bed\textquotesingle{})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_acc51c8ebea5fd45c209c1183ae10eebc}{geyser}} = Boolean\+Field(\textquotesingle{}Geyser\textquotesingle{})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_ab3cf7d8224e9b6d02a861afc6f84de27}{gas\+\_\+stove}} = Boolean\+Field(\textquotesingle{}Gas Stove\textquotesingle{})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_ab7c036f21feff241d7b25b10428f1e3d}{sofa}} = Boolean\+Field(\textquotesingle{}Sofa Set\textquotesingle{})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a848739b760dcfcc7756db9264f34224d}{landloard\+\_\+nature}} = Text\+Area\+Field(\textquotesingle{}Nature of Landlord\textquotesingle{},validators=\mbox{[}Data\+Required(), Length(min=2, max=200)\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a81b380907e2d3a4a29aa8ede04c9582d}{neighbours\+\_\+nature}} = Text\+Area\+Field(\textquotesingle{}Nature of Neighbours\textquotesingle{},validators=\mbox{[}Length(min=2, max=200)\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a120d73b653b5ac99d0ad375bb56eda19}{comments}} = Text\+Area\+Field(\textquotesingle{}Comments\textquotesingle{},validators=\mbox{[}Length(min=2, max=200)\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a60a05da24687d03008ee33456c525ffc}{nearby}} = Text\+Area\+Field(\textquotesingle{}Nearby\textquotesingle{},validators=\mbox{[}Data\+Required(), Length(min=2, max=200)\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a949de6201730775b67bac77573af322b}{flat\+\_\+rating}} = Integer\+Field(\textquotesingle{}Rate 1-\/10\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a88e931cf93b9ee8d29533ba7b23bade2}{picture1}} = File\+Field(\char`\"{}Property\textquotesingle{}s Pic\char`\"{}, validators=\mbox{[}File\+Allowed(\mbox{[}\textquotesingle{}jpg\textquotesingle{},\textquotesingle{}png\textquotesingle{},\textquotesingle{}jpeg\textquotesingle{}\mbox{]})\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_ab3d79855a977306dad5d3aa0bd79a9ea}{picture2}} = File\+Field(\char`\"{}Property\textquotesingle{}s Pic\char`\"{}, validators=\mbox{[}File\+Allowed(\mbox{[}\textquotesingle{}jpg\textquotesingle{},\textquotesingle{}png\textquotesingle{},\textquotesingle{}jpeg\textquotesingle{}\mbox{]})\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a7ee48c98ab5a2dfa02aedfd4169e320f}{picture3}} = File\+Field(\char`\"{}Property\textquotesingle{}s Pic\char`\"{}, validators=\mbox{[}File\+Allowed(\mbox{[}\textquotesingle{}jpg\textquotesingle{},\textquotesingle{}png\textquotesingle{},\textquotesingle{}jpeg\textquotesingle{}\mbox{]})\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a267122dd4a734a27c2f23e76b9d465fa}{picture4}} = File\+Field(\char`\"{}Property\textquotesingle{}s Pic\char`\"{}, validators=\mbox{[}File\+Allowed(\mbox{[}\textquotesingle{}jpg\textquotesingle{},\textquotesingle{}png\textquotesingle{},\textquotesingle{}jpeg\textquotesingle{}\mbox{]})\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_adc3f5ae4eb0eb8326c5ca18aee9a4b7a}{picture5}} = File\+Field(\char`\"{}Property\textquotesingle{}s Pic\char`\"{}, validators=\mbox{[}File\+Allowed(\mbox{[}\textquotesingle{}jpg\textquotesingle{},\textquotesingle{}png\textquotesingle{},\textquotesingle{}jpeg\textquotesingle{}\mbox{]})\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_a2cde6c3e4bcf261ee168553a611afb5f}{bedrooms}} = Radio\+Field(\textquotesingle{}No. of bedrooms\textquotesingle{}, choices=\mbox{[}(3,\textquotesingle{}4-\/B\+HK\textquotesingle{}),(2,\textquotesingle{}3-\/B\+HK\textquotesingle{}),(1,\textquotesingle{}2-\/B\+HK\textquotesingle{}),(0,\textquotesingle{}1-\/B\+HK\textquotesingle{})\mbox{]} , validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_post__info_ab1bf1d07b34374940d9cdad4e083f21a}{submit}} = Submit\+Field(\textquotesingle{}Submit\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb} This class is a 'form', it inherits class FlaskForm and provides a structure for form which accepts all the details regarding a post\end{DoxyVerb}
+
+
+\begin{DoxyVerb} BooleanField, which is a checkbox to get whether the respective amenity is provided or not \end{DoxyVerb}
+
+
+\begin{DoxyVerb} variable landloard_nature stores input text as string, that is, nature of landlord according to the user \end{DoxyVerb}
+
+
+\begin{DoxyVerb} variable neighbours_nature stores input text as string, that is, nature of neighbours according to the user \end{DoxyVerb}
+
+
+\begin{DoxyVerb} variable comments stores input text as string, that is, additional comment regarding the place \end{DoxyVerb}
+
+
+\begin{DoxyVerb} variable nearby stores input text as string, that is, nearby areas \end{DoxyVerb}
+
+
+\begin{DoxyVerb} variable flat_rating stores overall rating of the place as an integer from the point of user who is posting  \end{DoxyVerb}
+
+
+\begin{DoxyVerb} Filefield which takes file as input of the given formats \end{DoxyVerb}
+
+
+\begin{DoxyVerb} SubmitField to submit the form that has all the details regarding a post \end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classforms_1_1_post__info_af2fee132517c28b170d697f280f9fad9}\label{classforms_1_1_post__info_af2fee132517c28b170d697f280f9fad9}} 
+\index{forms.Post\_info@{forms.Post\_info}!ac@{ac}}
+\index{ac@{ac}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{ac}{ac}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+ac = Boolean\+Field(\textquotesingle{}AC\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a97ddb190572a9f31a6eeee700809f3d1}\label{classforms_1_1_post__info_a97ddb190572a9f31a6eeee700809f3d1}} 
+\index{forms.Post\_info@{forms.Post\_info}!almirah@{almirah}}
+\index{almirah@{almirah}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{almirah}{almirah}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+almirah = Boolean\+Field(\textquotesingle{}Almirah\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_ac34467984be070f9941dfc9e5069ae28}\label{classforms_1_1_post__info_ac34467984be070f9941dfc9e5069ae28}} 
+\index{forms.Post\_info@{forms.Post\_info}!area@{area}}
+\index{area@{area}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{area}{area}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+area = String\+Field(\textquotesingle{}Area\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a4330dcf8f80624d8169ab071eb7baa3e}\label{classforms_1_1_post__info_a4330dcf8f80624d8169ab071eb7baa3e}} 
+\index{forms.Post\_info@{forms.Post\_info}!bed@{bed}}
+\index{bed@{bed}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{bed}{bed}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+bed = Boolean\+Field(\textquotesingle{}Bed\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a2cde6c3e4bcf261ee168553a611afb5f}\label{classforms_1_1_post__info_a2cde6c3e4bcf261ee168553a611afb5f}} 
+\index{forms.Post\_info@{forms.Post\_info}!bedrooms@{bedrooms}}
+\index{bedrooms@{bedrooms}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{bedrooms}{bedrooms}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+bedrooms = Radio\+Field(\textquotesingle{}No. of bedrooms\textquotesingle{}, choices=\mbox{[}(3,\textquotesingle{}4-\/B\+HK\textquotesingle{}),(2,\textquotesingle{}3-\/B\+HK\textquotesingle{}),(1,\textquotesingle{}2-\/B\+HK\textquotesingle{}),(0,\textquotesingle{}1-\/B\+HK\textquotesingle{})\mbox{]} , validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a49bb14eeae5c11707fd31312afb761a9}\label{classforms_1_1_post__info_a49bb14eeae5c11707fd31312afb761a9}} 
+\index{forms.Post\_info@{forms.Post\_info}!city@{city}}
+\index{city@{city}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{city}{city}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+city = String\+Field(\textquotesingle{}City\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a120d73b653b5ac99d0ad375bb56eda19}\label{classforms_1_1_post__info_a120d73b653b5ac99d0ad375bb56eda19}} 
+\index{forms.Post\_info@{forms.Post\_info}!comments@{comments}}
+\index{comments@{comments}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{comments}{comments}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+comments = Text\+Area\+Field(\textquotesingle{}Comments\textquotesingle{},validators=\mbox{[}Length(min=2, max=200)\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a949de6201730775b67bac77573af322b}\label{classforms_1_1_post__info_a949de6201730775b67bac77573af322b}} 
+\index{forms.Post\_info@{forms.Post\_info}!flat\_rating@{flat\_rating}}
+\index{flat\_rating@{flat\_rating}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{flat\_rating}{flat\_rating}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+flat\+\_\+rating = Integer\+Field(\textquotesingle{}Rate 1-\/10\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a7b91744323d51060d49c7d7cfbc43796}\label{classforms_1_1_post__info_a7b91744323d51060d49c7d7cfbc43796}} 
+\index{forms.Post\_info@{forms.Post\_info}!furnishing\_type@{furnishing\_type}}
+\index{furnishing\_type@{furnishing\_type}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{furnishing\_type}{furnishing\_type}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+furnishing\+\_\+type = Radio\+Field(\textquotesingle{}Furnishing Type\textquotesingle{}, choices=\mbox{[}(2,\textquotesingle{}Fully-\/Furnished\textquotesingle{}),(1,\textquotesingle{}Semi-\/Furnished\textquotesingle{}),(0,\textquotesingle{}Not furnished\textquotesingle{})\mbox{]} , validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_ab3cf7d8224e9b6d02a861afc6f84de27}\label{classforms_1_1_post__info_ab3cf7d8224e9b6d02a861afc6f84de27}} 
+\index{forms.Post\_info@{forms.Post\_info}!gas\_stove@{gas\_stove}}
+\index{gas\_stove@{gas\_stove}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{gas\_stove}{gas\_stove}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+gas\+\_\+stove = Boolean\+Field(\textquotesingle{}Gas Stove\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_acc51c8ebea5fd45c209c1183ae10eebc}\label{classforms_1_1_post__info_acc51c8ebea5fd45c209c1183ae10eebc}} 
+\index{forms.Post\_info@{forms.Post\_info}!geyser@{geyser}}
+\index{geyser@{geyser}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{geyser}{geyser}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+geyser = Boolean\+Field(\textquotesingle{}Geyser\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a848739b760dcfcc7756db9264f34224d}\label{classforms_1_1_post__info_a848739b760dcfcc7756db9264f34224d}} 
+\index{forms.Post\_info@{forms.Post\_info}!landloard\_nature@{landloard\_nature}}
+\index{landloard\_nature@{landloard\_nature}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{landloard\_nature}{landloard\_nature}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+landloard\+\_\+nature = Text\+Area\+Field(\textquotesingle{}Nature of Landlord\textquotesingle{},validators=\mbox{[}Data\+Required(), Length(min=2, max=200)\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a60a05da24687d03008ee33456c525ffc}\label{classforms_1_1_post__info_a60a05da24687d03008ee33456c525ffc}} 
+\index{forms.Post\_info@{forms.Post\_info}!nearby@{nearby}}
+\index{nearby@{nearby}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{nearby}{nearby}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+nearby = Text\+Area\+Field(\textquotesingle{}Nearby\textquotesingle{},validators=\mbox{[}Data\+Required(), Length(min=2, max=200)\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a81b380907e2d3a4a29aa8ede04c9582d}\label{classforms_1_1_post__info_a81b380907e2d3a4a29aa8ede04c9582d}} 
+\index{forms.Post\_info@{forms.Post\_info}!neighbours\_nature@{neighbours\_nature}}
+\index{neighbours\_nature@{neighbours\_nature}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{neighbours\_nature}{neighbours\_nature}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+neighbours\+\_\+nature = Text\+Area\+Field(\textquotesingle{}Nature of Neighbours\textquotesingle{},validators=\mbox{[}Length(min=2, max=200)\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a88e931cf93b9ee8d29533ba7b23bade2}\label{classforms_1_1_post__info_a88e931cf93b9ee8d29533ba7b23bade2}} 
+\index{forms.Post\_info@{forms.Post\_info}!picture1@{picture1}}
+\index{picture1@{picture1}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{picture1}{picture1}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+picture1 = File\+Field(\char`\"{}Property\textquotesingle{}s Pic\char`\"{}, validators=\mbox{[}File\+Allowed(\mbox{[}\textquotesingle{}jpg\textquotesingle{},\textquotesingle{}png\textquotesingle{},\textquotesingle{}jpeg\textquotesingle{}\mbox{]})\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_ab3d79855a977306dad5d3aa0bd79a9ea}\label{classforms_1_1_post__info_ab3d79855a977306dad5d3aa0bd79a9ea}} 
+\index{forms.Post\_info@{forms.Post\_info}!picture2@{picture2}}
+\index{picture2@{picture2}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{picture2}{picture2}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+picture2 = File\+Field(\char`\"{}Property\textquotesingle{}s Pic\char`\"{}, validators=\mbox{[}File\+Allowed(\mbox{[}\textquotesingle{}jpg\textquotesingle{},\textquotesingle{}png\textquotesingle{},\textquotesingle{}jpeg\textquotesingle{}\mbox{]})\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a7ee48c98ab5a2dfa02aedfd4169e320f}\label{classforms_1_1_post__info_a7ee48c98ab5a2dfa02aedfd4169e320f}} 
+\index{forms.Post\_info@{forms.Post\_info}!picture3@{picture3}}
+\index{picture3@{picture3}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{picture3}{picture3}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+picture3 = File\+Field(\char`\"{}Property\textquotesingle{}s Pic\char`\"{}, validators=\mbox{[}File\+Allowed(\mbox{[}\textquotesingle{}jpg\textquotesingle{},\textquotesingle{}png\textquotesingle{},\textquotesingle{}jpeg\textquotesingle{}\mbox{]})\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a267122dd4a734a27c2f23e76b9d465fa}\label{classforms_1_1_post__info_a267122dd4a734a27c2f23e76b9d465fa}} 
+\index{forms.Post\_info@{forms.Post\_info}!picture4@{picture4}}
+\index{picture4@{picture4}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{picture4}{picture4}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+picture4 = File\+Field(\char`\"{}Property\textquotesingle{}s Pic\char`\"{}, validators=\mbox{[}File\+Allowed(\mbox{[}\textquotesingle{}jpg\textquotesingle{},\textquotesingle{}png\textquotesingle{},\textquotesingle{}jpeg\textquotesingle{}\mbox{]})\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_adc3f5ae4eb0eb8326c5ca18aee9a4b7a}\label{classforms_1_1_post__info_adc3f5ae4eb0eb8326c5ca18aee9a4b7a}} 
+\index{forms.Post\_info@{forms.Post\_info}!picture5@{picture5}}
+\index{picture5@{picture5}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{picture5}{picture5}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+picture5 = File\+Field(\char`\"{}Property\textquotesingle{}s Pic\char`\"{}, validators=\mbox{[}File\+Allowed(\mbox{[}\textquotesingle{}jpg\textquotesingle{},\textquotesingle{}png\textquotesingle{},\textquotesingle{}jpeg\textquotesingle{}\mbox{]})\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_aec63060eccbd5224e9dfef46b98d0599}\label{classforms_1_1_post__info_aec63060eccbd5224e9dfef46b98d0599}} 
+\index{forms.Post\_info@{forms.Post\_info}!pincode@{pincode}}
+\index{pincode@{pincode}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{pincode}{pincode}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+pincode = Integer\+Field(\textquotesingle{}Pincode\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a9c4c98c854a5ad4fac4860eb47400194}\label{classforms_1_1_post__info_a9c4c98c854a5ad4fac4860eb47400194}} 
+\index{forms.Post\_info@{forms.Post\_info}!refrigerator@{refrigerator}}
+\index{refrigerator@{refrigerator}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{refrigerator}{refrigerator}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+refrigerator = Boolean\+Field(\textquotesingle{}Refrigerator\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a88f3315b3cc2c24ab504629a3894f7a0}\label{classforms_1_1_post__info_a88f3315b3cc2c24ab504629a3894f7a0}} 
+\index{forms.Post\_info@{forms.Post\_info}!rent@{rent}}
+\index{rent@{rent}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{rent}{rent}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+rent = Integer\+Field(\textquotesingle{}Rent\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_ab7c036f21feff241d7b25b10428f1e3d}\label{classforms_1_1_post__info_ab7c036f21feff241d7b25b10428f1e3d}} 
+\index{forms.Post\_info@{forms.Post\_info}!sofa@{sofa}}
+\index{sofa@{sofa}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{sofa}{sofa}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+sofa = Boolean\+Field(\textquotesingle{}Sofa Set\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_ab56599b64d7b36d68f97ce73c87d3376}\label{classforms_1_1_post__info_ab56599b64d7b36d68f97ce73c87d3376}} 
+\index{forms.Post\_info@{forms.Post\_info}!state@{state}}
+\index{state@{state}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+state = String\+Field(\textquotesingle{}State\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_ab1bf1d07b34374940d9cdad4e083f21a}\label{classforms_1_1_post__info_ab1bf1d07b34374940d9cdad4e083f21a}} 
+\index{forms.Post\_info@{forms.Post\_info}!submit@{submit}}
+\index{submit@{submit}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{submit}{submit}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+submit = Submit\+Field(\textquotesingle{}Submit\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_post__info_a3731c5f9445fdc7716c59d2b76c5302f}\label{classforms_1_1_post__info_a3731c5f9445fdc7716c59d2b76c5302f}} 
+\index{forms.Post\_info@{forms.Post\_info}!washing\_machine@{washing\_machine}}
+\index{washing\_machine@{washing\_machine}!forms.Post\_info@{forms.Post\_info}}
+\doxysubsubsection{\texorpdfstring{washing\_machine}{washing\_machine}}
+{\footnotesize\ttfamily forms.\+Post\+\_\+info.\+washing\+\_\+machine = Boolean\+Field(\textquotesingle{}Washing Machine\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Home\+Away\+From\+Home\+Wesbite-\/master/\mbox{\hyperlink{forms_8py}{forms.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{classmain_1_1_review}{}\doxysection{main.\+Review Class Reference}
+\label{classmain_1_1_review}\index{main.Review@{main.Review}}
+Inheritance diagram for main.\+Review\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1_review}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classmain_1_1_review_a3eda7c78ff360083d33fb2f955339ac3}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_review_aa1878eed245f9a2405712f2d512ce9a6}{id}} = db.\+Column(db.\+Integer, primary\+\_\+key=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_review_a9e21a8dbf72e200a80bbd0d93a2ce88d}{Rating}} = db.\+Column(db.\+Integer, nullable=False)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This table stores which user reviewed which user, It also overwrites the previous rating given by user with latest review the user has given\end{DoxyVerb}
+
+
+\begin{DoxyVerb}id is concatination of user_id(who gave rating) and user_id(to whom the rating is given) ensuring that only one rating of a user is considered for a specific user\end{DoxyVerb}
+
+
+\begin{DoxyVerb}stores the latest rating given by the user\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1_review_a3eda7c78ff360083d33fb2f955339ac3}\label{classmain_1_1_review_a3eda7c78ff360083d33fb2f955339ac3}} 
+\index{main.Review@{main.Review}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!main.Review@{main.Review}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def main.\+Review.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}specific columns in return will be shown when a instance of this class is printed\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmain_1_1_review_aa1878eed245f9a2405712f2d512ce9a6}\label{classmain_1_1_review_aa1878eed245f9a2405712f2d512ce9a6}} 
+\index{main.Review@{main.Review}!id@{id}}
+\index{id@{id}!main.Review@{main.Review}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily main.\+Review.\+id = db.\+Column(db.\+Integer, primary\+\_\+key=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_review_a9e21a8dbf72e200a80bbd0d93a2ce88d}\label{classmain_1_1_review_a9e21a8dbf72e200a80bbd0d93a2ce88d}} 
+\index{main.Review@{main.Review}!Rating@{Rating}}
+\index{Rating@{Rating}!main.Review@{main.Review}}
+\doxysubsubsection{\texorpdfstring{Rating}{Rating}}
+{\footnotesize\ttfamily main.\+Review.\+Rating = db.\+Column(db.\+Integer, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Home\+Away\+From\+Home\+Wesbite-\/master/\mbox{\hyperlink{main_8py}{main.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,315 @@
+\hypertarget{classmain_1_1_post}{}\doxysection{main.\+Post Class Reference}
+\label{classmain_1_1_post}\index{main.Post@{main.Post}}
+Inheritance diagram for main.\+Post\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1_post}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classmain_1_1_post_a1ec703ebf21cf0cdd090c620dd85c6f1}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a3c38ebc843696caa9830856a3cee3601}{id}} = db.\+Column(db.\+Integer, primary\+\_\+key=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a2feaa079bdf47fac51986073a34d2f4c}{user\+\_\+id}} = db.\+Column(db.\+Integer, db.\+Foreign\+Key(\textquotesingle{}user.\+id\textquotesingle{}), nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_aafe239b425e2bb25d070e2c8b2c45c97}{user\+\_\+name}} = db.\+Column(db.\+String(20), nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a0cad9b34c2c4f11ce19d2ed15d16dc02}{state}} = db.\+Column(db.\+String(100), nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_acc58f61691e3a4a28a6f263a5e9d97c3}{city}} = db.\+Column(db.\+String(100), nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a3e265f1f8bcc74960b85a34ab4568cf2}{area}} = db.\+Column(db.\+String(100), nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a7d4e6b3be149369b4929c64c13d26c47}{date\+\_\+posted}} = db.\+Column(db.\+Date\+Time, nullable=False, default=datetime.\+utcnow)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a5f92567035cf90676e19396d3bc11e63}{pincode}} = db.\+Column(db.\+Integer, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_acd27559c654d408a9fac68cf41f4847b}{rent}} = db.\+Column(db.\+Integer, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a7938ac657436523782586ba3c217e826}{furnishing\+\_\+type}} = db.\+Column(db.\+Integer,default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a23bcd2aa539c5885fee0a534a33cc1b5}{refrigerator}} = db.\+Column(db.\+Boolean,default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_add3ce6119815c43406c698898b52f1d8}{washing\+\_\+machine}} = db.\+Column(db.\+Boolean, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a3938b3a43f81665222e15b7cf7a61aea}{bedrooms}} = db.\+Column(db.\+Integer, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_af7db3c6d862a1af0cbe8aa333d13fd40}{ac}} = db.\+Column(db.\+Boolean,default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_ac20af5847f29174c214e2ab3d68fc0f4}{almirah}} = db.\+Column(db.\+Boolean,default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a7d2a95a28563b61435e43f2e07884a4d}{bed}} = db.\+Column(db.\+Boolean,default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_ae04b2552de9001357700b98190a0ea37}{geyser}} = db.\+Column(db.\+Boolean,default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a0f8fc20a58653ff6f860eca4263d8397}{gas\+\_\+stove}} = db.\+Column(db.\+Boolean,default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a04220afe56130d7b05889daabbd90a49}{sofa}} = db.\+Column(db.\+Boolean,default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_ae5884766d2fb52d256392dffbf4b562b}{availability}} = db.\+Column(db.\+Integer,default=0, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a9524a87c6ac8001d8be7aab61f300ebf}{landloard\+\_\+nature}} = db.\+Column(db.\+Text,nullable=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a65774b152a6d605a23fd5f7e1722abc7}{neighbours\+\_\+nature}} = db.\+Column(db.\+Text,nullable=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a2e6888988a2e8e41f3775148b2976c63}{comments}} = db.\+Column(db.\+Text, nullable=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a9e71c3002b6e9968a1ffad117a30da6b}{flat\+\_\+rating}} = db.\+Column(db.\+Integer, default=1, nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a41293f2d2a32e3bcb6533e80523d33ee}{nearby}} = db.\+Column(db.\+Text, nullable=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a139d2d19f17c9f7f6d3880076540d680}{picture1}} = db.\+Column(db.\+String(20), nullable=False)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_aaa63824bca85b683be1c91d78fb0537e}{picture2}} = db.\+Column(db.\+String(20), nullable=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a6604b734442b8eaeba0649f6fce076df}{picture3}} = db.\+Column(db.\+String(20), nullable=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a93d6e1b7b3147abe724f26f54e5ae298}{picture4}} = db.\+Column(db.\+String(20), nullable=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_post_a983bf5d1c245e9e4d22d9d88639cf39b}{picture5}} = db.\+Column(db.\+String(20), nullable=True)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This class create a table post with various column to store infromation about post.
+Table column:
+user_id : Store user id who posted post
+user_name : Store user Name who posted post
+Below column are related to flat information
+state : Stroe flat state,
+city  : Stroe flat city,
+area  : Stroe flat area,
+date_posted  : Stroe the date in which information posted about flat,
+pincode   : Stroe flat area pincode
+rent       : Stroe flat rent 
+'Below column are realated to facilities'
+furnishing_type,
+washing_machine,
+bedrooms,
+ac,
+almirah,
+bed,
+geyser,
+gas_stove,
+sofa,
+availability,
+landloard_nature,
+comments,
+flat_rating,
+flat_rating,
+picture1 : store picture about flat
+picture2 : store picture about flat
+picture3 : store picture about flat
+picture4 : store picture about flat
+picture5 : store picture about flat
+picture1 : store picture about flat
+This table stores all the data related to the posts done by User and inherits db.Model class
+id is primary key for each post
+stores id of user who posted it , refers 'id' column of User table
+ stores name of user who posted it 
+
+stores name with extension of image \end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmain_1_1_post_a1ec703ebf21cf0cdd090c620dd85c6f1}\label{classmain_1_1_post_a1ec703ebf21cf0cdd090c620dd85c6f1}} 
+\index{main.Post@{main.Post}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily def main.\+Post.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}these columns in return will be printed when instance of this class is printed\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmain_1_1_post_af7db3c6d862a1af0cbe8aa333d13fd40}\label{classmain_1_1_post_af7db3c6d862a1af0cbe8aa333d13fd40}} 
+\index{main.Post@{main.Post}!ac@{ac}}
+\index{ac@{ac}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{ac}{ac}}
+{\footnotesize\ttfamily main.\+Post.\+ac = db.\+Column(db.\+Boolean,default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_ac20af5847f29174c214e2ab3d68fc0f4}\label{classmain_1_1_post_ac20af5847f29174c214e2ab3d68fc0f4}} 
+\index{main.Post@{main.Post}!almirah@{almirah}}
+\index{almirah@{almirah}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{almirah}{almirah}}
+{\footnotesize\ttfamily main.\+Post.\+almirah = db.\+Column(db.\+Boolean,default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a3e265f1f8bcc74960b85a34ab4568cf2}\label{classmain_1_1_post_a3e265f1f8bcc74960b85a34ab4568cf2}} 
+\index{main.Post@{main.Post}!area@{area}}
+\index{area@{area}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{area}{area}}
+{\footnotesize\ttfamily main.\+Post.\+area = db.\+Column(db.\+String(100), nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_ae5884766d2fb52d256392dffbf4b562b}\label{classmain_1_1_post_ae5884766d2fb52d256392dffbf4b562b}} 
+\index{main.Post@{main.Post}!availability@{availability}}
+\index{availability@{availability}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{availability}{availability}}
+{\footnotesize\ttfamily main.\+Post.\+availability = db.\+Column(db.\+Integer,default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a7d2a95a28563b61435e43f2e07884a4d}\label{classmain_1_1_post_a7d2a95a28563b61435e43f2e07884a4d}} 
+\index{main.Post@{main.Post}!bed@{bed}}
+\index{bed@{bed}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{bed}{bed}}
+{\footnotesize\ttfamily main.\+Post.\+bed = db.\+Column(db.\+Boolean,default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a3938b3a43f81665222e15b7cf7a61aea}\label{classmain_1_1_post_a3938b3a43f81665222e15b7cf7a61aea}} 
+\index{main.Post@{main.Post}!bedrooms@{bedrooms}}
+\index{bedrooms@{bedrooms}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{bedrooms}{bedrooms}}
+{\footnotesize\ttfamily main.\+Post.\+bedrooms = db.\+Column(db.\+Integer, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_acc58f61691e3a4a28a6f263a5e9d97c3}\label{classmain_1_1_post_acc58f61691e3a4a28a6f263a5e9d97c3}} 
+\index{main.Post@{main.Post}!city@{city}}
+\index{city@{city}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{city}{city}}
+{\footnotesize\ttfamily main.\+Post.\+city = db.\+Column(db.\+String(100), nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a2e6888988a2e8e41f3775148b2976c63}\label{classmain_1_1_post_a2e6888988a2e8e41f3775148b2976c63}} 
+\index{main.Post@{main.Post}!comments@{comments}}
+\index{comments@{comments}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{comments}{comments}}
+{\footnotesize\ttfamily main.\+Post.\+comments = db.\+Column(db.\+Text, nullable=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a7d4e6b3be149369b4929c64c13d26c47}\label{classmain_1_1_post_a7d4e6b3be149369b4929c64c13d26c47}} 
+\index{main.Post@{main.Post}!date\_posted@{date\_posted}}
+\index{date\_posted@{date\_posted}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{date\_posted}{date\_posted}}
+{\footnotesize\ttfamily main.\+Post.\+date\+\_\+posted = db.\+Column(db.\+Date\+Time, nullable=False, default=datetime.\+utcnow)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a9e71c3002b6e9968a1ffad117a30da6b}\label{classmain_1_1_post_a9e71c3002b6e9968a1ffad117a30da6b}} 
+\index{main.Post@{main.Post}!flat\_rating@{flat\_rating}}
+\index{flat\_rating@{flat\_rating}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{flat\_rating}{flat\_rating}}
+{\footnotesize\ttfamily main.\+Post.\+flat\+\_\+rating = db.\+Column(db.\+Integer, default=1, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a7938ac657436523782586ba3c217e826}\label{classmain_1_1_post_a7938ac657436523782586ba3c217e826}} 
+\index{main.Post@{main.Post}!furnishing\_type@{furnishing\_type}}
+\index{furnishing\_type@{furnishing\_type}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{furnishing\_type}{furnishing\_type}}
+{\footnotesize\ttfamily main.\+Post.\+furnishing\+\_\+type = db.\+Column(db.\+Integer,default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a0f8fc20a58653ff6f860eca4263d8397}\label{classmain_1_1_post_a0f8fc20a58653ff6f860eca4263d8397}} 
+\index{main.Post@{main.Post}!gas\_stove@{gas\_stove}}
+\index{gas\_stove@{gas\_stove}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{gas\_stove}{gas\_stove}}
+{\footnotesize\ttfamily main.\+Post.\+gas\+\_\+stove = db.\+Column(db.\+Boolean,default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_ae04b2552de9001357700b98190a0ea37}\label{classmain_1_1_post_ae04b2552de9001357700b98190a0ea37}} 
+\index{main.Post@{main.Post}!geyser@{geyser}}
+\index{geyser@{geyser}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{geyser}{geyser}}
+{\footnotesize\ttfamily main.\+Post.\+geyser = db.\+Column(db.\+Boolean,default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a3c38ebc843696caa9830856a3cee3601}\label{classmain_1_1_post_a3c38ebc843696caa9830856a3cee3601}} 
+\index{main.Post@{main.Post}!id@{id}}
+\index{id@{id}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily main.\+Post.\+id = db.\+Column(db.\+Integer, primary\+\_\+key=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a9524a87c6ac8001d8be7aab61f300ebf}\label{classmain_1_1_post_a9524a87c6ac8001d8be7aab61f300ebf}} 
+\index{main.Post@{main.Post}!landloard\_nature@{landloard\_nature}}
+\index{landloard\_nature@{landloard\_nature}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{landloard\_nature}{landloard\_nature}}
+{\footnotesize\ttfamily main.\+Post.\+landloard\+\_\+nature = db.\+Column(db.\+Text,nullable=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a41293f2d2a32e3bcb6533e80523d33ee}\label{classmain_1_1_post_a41293f2d2a32e3bcb6533e80523d33ee}} 
+\index{main.Post@{main.Post}!nearby@{nearby}}
+\index{nearby@{nearby}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{nearby}{nearby}}
+{\footnotesize\ttfamily main.\+Post.\+nearby = db.\+Column(db.\+Text, nullable=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a65774b152a6d605a23fd5f7e1722abc7}\label{classmain_1_1_post_a65774b152a6d605a23fd5f7e1722abc7}} 
+\index{main.Post@{main.Post}!neighbours\_nature@{neighbours\_nature}}
+\index{neighbours\_nature@{neighbours\_nature}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{neighbours\_nature}{neighbours\_nature}}
+{\footnotesize\ttfamily main.\+Post.\+neighbours\+\_\+nature = db.\+Column(db.\+Text,nullable=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a139d2d19f17c9f7f6d3880076540d680}\label{classmain_1_1_post_a139d2d19f17c9f7f6d3880076540d680}} 
+\index{main.Post@{main.Post}!picture1@{picture1}}
+\index{picture1@{picture1}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{picture1}{picture1}}
+{\footnotesize\ttfamily main.\+Post.\+picture1 = db.\+Column(db.\+String(20), nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_aaa63824bca85b683be1c91d78fb0537e}\label{classmain_1_1_post_aaa63824bca85b683be1c91d78fb0537e}} 
+\index{main.Post@{main.Post}!picture2@{picture2}}
+\index{picture2@{picture2}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{picture2}{picture2}}
+{\footnotesize\ttfamily main.\+Post.\+picture2 = db.\+Column(db.\+String(20), nullable=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a6604b734442b8eaeba0649f6fce076df}\label{classmain_1_1_post_a6604b734442b8eaeba0649f6fce076df}} 
+\index{main.Post@{main.Post}!picture3@{picture3}}
+\index{picture3@{picture3}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{picture3}{picture3}}
+{\footnotesize\ttfamily main.\+Post.\+picture3 = db.\+Column(db.\+String(20), nullable=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a93d6e1b7b3147abe724f26f54e5ae298}\label{classmain_1_1_post_a93d6e1b7b3147abe724f26f54e5ae298}} 
+\index{main.Post@{main.Post}!picture4@{picture4}}
+\index{picture4@{picture4}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{picture4}{picture4}}
+{\footnotesize\ttfamily main.\+Post.\+picture4 = db.\+Column(db.\+String(20), nullable=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a983bf5d1c245e9e4d22d9d88639cf39b}\label{classmain_1_1_post_a983bf5d1c245e9e4d22d9d88639cf39b}} 
+\index{main.Post@{main.Post}!picture5@{picture5}}
+\index{picture5@{picture5}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{picture5}{picture5}}
+{\footnotesize\ttfamily main.\+Post.\+picture5 = db.\+Column(db.\+String(20), nullable=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a5f92567035cf90676e19396d3bc11e63}\label{classmain_1_1_post_a5f92567035cf90676e19396d3bc11e63}} 
+\index{main.Post@{main.Post}!pincode@{pincode}}
+\index{pincode@{pincode}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{pincode}{pincode}}
+{\footnotesize\ttfamily main.\+Post.\+pincode = db.\+Column(db.\+Integer, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a23bcd2aa539c5885fee0a534a33cc1b5}\label{classmain_1_1_post_a23bcd2aa539c5885fee0a534a33cc1b5}} 
+\index{main.Post@{main.Post}!refrigerator@{refrigerator}}
+\index{refrigerator@{refrigerator}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{refrigerator}{refrigerator}}
+{\footnotesize\ttfamily main.\+Post.\+refrigerator = db.\+Column(db.\+Boolean,default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_acd27559c654d408a9fac68cf41f4847b}\label{classmain_1_1_post_acd27559c654d408a9fac68cf41f4847b}} 
+\index{main.Post@{main.Post}!rent@{rent}}
+\index{rent@{rent}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{rent}{rent}}
+{\footnotesize\ttfamily main.\+Post.\+rent = db.\+Column(db.\+Integer, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a04220afe56130d7b05889daabbd90a49}\label{classmain_1_1_post_a04220afe56130d7b05889daabbd90a49}} 
+\index{main.Post@{main.Post}!sofa@{sofa}}
+\index{sofa@{sofa}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{sofa}{sofa}}
+{\footnotesize\ttfamily main.\+Post.\+sofa = db.\+Column(db.\+Boolean,default=0, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a0cad9b34c2c4f11ce19d2ed15d16dc02}\label{classmain_1_1_post_a0cad9b34c2c4f11ce19d2ed15d16dc02}} 
+\index{main.Post@{main.Post}!state@{state}}
+\index{state@{state}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily main.\+Post.\+state = db.\+Column(db.\+String(100), nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_a2feaa079bdf47fac51986073a34d2f4c}\label{classmain_1_1_post_a2feaa079bdf47fac51986073a34d2f4c}} 
+\index{main.Post@{main.Post}!user\_id@{user\_id}}
+\index{user\_id@{user\_id}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{user\_id}{user\_id}}
+{\footnotesize\ttfamily main.\+Post.\+user\+\_\+id = db.\+Column(db.\+Integer, db.\+Foreign\+Key(\textquotesingle{}user.\+id\textquotesingle{}), nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_aafe239b425e2bb25d070e2c8b2c45c97}\label{classmain_1_1_post_aafe239b425e2bb25d070e2c8b2c45c97}} 
+\index{main.Post@{main.Post}!user\_name@{user\_name}}
+\index{user\_name@{user\_name}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{user\_name}{user\_name}}
+{\footnotesize\ttfamily main.\+Post.\+user\+\_\+name = db.\+Column(db.\+String(20), nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmain_1_1_post_add3ce6119815c43406c698898b52f1d8}\label{classmain_1_1_post_add3ce6119815c43406c698898b52f1d8}} 
+\index{main.Post@{main.Post}!washing\_machine@{washing\_machine}}
+\index{washing\_machine@{washing\_machine}!main.Post@{main.Post}}
+\doxysubsubsection{\texorpdfstring{washing\_machine}{washing\_machine}}
+{\footnotesize\ttfamily main.\+Post.\+washing\+\_\+machine = db.\+Column(db.\+Boolean, nullable=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Home\+Away\+From\+Home\+Wesbite-\/master/\mbox{\hyperlink{main_8py}{main.\+py}}\end{DoxyCompactItemize}

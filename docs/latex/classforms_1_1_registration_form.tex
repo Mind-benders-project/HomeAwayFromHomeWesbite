@@ -1,0 +1,147 @@
+\hypertarget{classforms_1_1_registration_form}{}\doxysection{forms.\+Registration\+Form Class Reference}
+\label{classforms_1_1_registration_form}\index{forms.RegistrationForm@{forms.RegistrationForm}}
+Inheritance diagram for forms.\+Registration\+Form\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classforms_1_1_registration_form}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classforms_1_1_registration_form_a00484687bcde616dd179e7d613935ceb}{validate\+\_\+contact}} (self, \mbox{\hyperlink{classforms_1_1_registration_form_a39bc4603900a4115ca392f55541cdebc}{contact}})
+\item 
+def \mbox{\hyperlink{classforms_1_1_registration_form_a2b952a8e3d6cb7fc59a89baf29e665f7}{validate\+\_\+email}} (self, \mbox{\hyperlink{classforms_1_1_registration_form_a54f966d6e76b02b6639b81adfe3f2fcf}{email}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classforms_1_1_registration_form_af99ae78fd6b19d0836f6e2f6d6e0eea0}{name}}
+\item 
+\mbox{\hyperlink{classforms_1_1_registration_form_a54f966d6e76b02b6639b81adfe3f2fcf}{email}}
+\item 
+\mbox{\hyperlink{classforms_1_1_registration_form_a3275099f982331a623428b2046285c1f}{password}} = Password\+Field(\textquotesingle{}Password\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_registration_form_abd6c46083abb7f2ab11c84069e882b46}{confirm\+\_\+password}}
+\item 
+\mbox{\hyperlink{classforms_1_1_registration_form_a39bc4603900a4115ca392f55541cdebc}{contact}} = String\+Field(\textquotesingle{}Contact\textquotesingle{},validators=\mbox{[}Data\+Required(),Length(min=10, max=10),Regexp(\textquotesingle{}$^\wedge$\mbox{[}0-\/9\mbox{]}+\$\textquotesingle{}) \mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_registration_form_abfb614648643f8411ae77cf717040169}{dob}} = Date\+Field(\textquotesingle{}Date of Birth \mbox{[}DD/MM/Y\+Y\+YY\mbox{]}\textquotesingle{}, format=\textquotesingle{}\%d/\%m/\%Y\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_registration_form_a230ea32a8ed77fb592f87f21745d6f82}{role}} = Radio\+Field(\textquotesingle{}Role\textquotesingle{}, choices=\mbox{[}(1,\textquotesingle{}Tenant\textquotesingle{}),(0,\textquotesingle{}Landlord\textquotesingle{})\mbox{]} , validators=\mbox{[}Data\+Required()\mbox{]})
+\item 
+\mbox{\hyperlink{classforms_1_1_registration_form_acfaf2c78971449ba005ebf44dbe35af3}{submit}} = Submit\+Field(\textquotesingle{}Register\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb} This class creates a form for Registering new users, inherits from class FlaskForm \end{DoxyVerb}
+
+
+\begin{DoxyVerb} variable name stores input as string, that is, the name of user\end{DoxyVerb}
+
+
+\begin{DoxyVerb} variable email stores input as string, that is, the email of user \end{DoxyVerb}
+
+
+\begin{DoxyVerb} variable password stores input as Password, that is, the password of user \end{DoxyVerb}
+
+
+\begin{DoxyVerb} confirm_password stores the password to match with value in above variable(password)\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classforms_1_1_registration_form_a00484687bcde616dd179e7d613935ceb}\label{classforms_1_1_registration_form_a00484687bcde616dd179e7d613935ceb}} 
+\index{forms.RegistrationForm@{forms.RegistrationForm}!validate\_contact@{validate\_contact}}
+\index{validate\_contact@{validate\_contact}!forms.RegistrationForm@{forms.RegistrationForm}}
+\doxysubsubsection{\texorpdfstring{validate\_contact()}{validate\_contact()}}
+{\footnotesize\ttfamily def forms.\+Registration\+Form.\+validate\+\_\+contact (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{contact }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This funtion checks whether a user with given contact already exists or not \end{DoxyVerb}
+
+
+\begin{DoxyVerb}raise raises an exception if existing contact no. is used already for registration \end{DoxyVerb}
+ \mbox{\Hypertarget{classforms_1_1_registration_form_a2b952a8e3d6cb7fc59a89baf29e665f7}\label{classforms_1_1_registration_form_a2b952a8e3d6cb7fc59a89baf29e665f7}} 
+\index{forms.RegistrationForm@{forms.RegistrationForm}!validate\_email@{validate\_email}}
+\index{validate\_email@{validate\_email}!forms.RegistrationForm@{forms.RegistrationForm}}
+\doxysubsubsection{\texorpdfstring{validate\_email()}{validate\_email()}}
+{\footnotesize\ttfamily def forms.\+Registration\+Form.\+validate\+\_\+email (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{email }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This funtion checks whether a user with given email id already exists or not \end{DoxyVerb}
+
+
+\begin{DoxyVerb}raise raises an exception if existing email is used already to register \end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classforms_1_1_registration_form_abd6c46083abb7f2ab11c84069e882b46}\label{classforms_1_1_registration_form_abd6c46083abb7f2ab11c84069e882b46}} 
+\index{forms.RegistrationForm@{forms.RegistrationForm}!confirm\_password@{confirm\_password}}
+\index{confirm\_password@{confirm\_password}!forms.RegistrationForm@{forms.RegistrationForm}}
+\doxysubsubsection{\texorpdfstring{confirm\_password}{confirm\_password}}
+{\footnotesize\ttfamily forms.\+Registration\+Form.\+confirm\+\_\+password\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  PasswordField(\textcolor{stringliteral}{'Confirm Password'},}
+\DoxyCodeLine{                                     validators=[DataRequired(), EqualTo(\textcolor{stringliteral}{'password'})])}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classforms_1_1_registration_form_a39bc4603900a4115ca392f55541cdebc}\label{classforms_1_1_registration_form_a39bc4603900a4115ca392f55541cdebc}} 
+\index{forms.RegistrationForm@{forms.RegistrationForm}!contact@{contact}}
+\index{contact@{contact}!forms.RegistrationForm@{forms.RegistrationForm}}
+\doxysubsubsection{\texorpdfstring{contact}{contact}}
+{\footnotesize\ttfamily forms.\+Registration\+Form.\+contact = String\+Field(\textquotesingle{}Contact\textquotesingle{},validators=\mbox{[}Data\+Required(),Length(min=10, max=10),Regexp(\textquotesingle{}$^\wedge$\mbox{[}0-\/9\mbox{]}+\$\textquotesingle{}) \mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_registration_form_abfb614648643f8411ae77cf717040169}\label{classforms_1_1_registration_form_abfb614648643f8411ae77cf717040169}} 
+\index{forms.RegistrationForm@{forms.RegistrationForm}!dob@{dob}}
+\index{dob@{dob}!forms.RegistrationForm@{forms.RegistrationForm}}
+\doxysubsubsection{\texorpdfstring{dob}{dob}}
+{\footnotesize\ttfamily forms.\+Registration\+Form.\+dob = Date\+Field(\textquotesingle{}Date of Birth \mbox{[}DD/MM/Y\+Y\+YY\mbox{]}\textquotesingle{}, format=\textquotesingle{}\%d/\%m/\%Y\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_registration_form_a54f966d6e76b02b6639b81adfe3f2fcf}\label{classforms_1_1_registration_form_a54f966d6e76b02b6639b81adfe3f2fcf}} 
+\index{forms.RegistrationForm@{forms.RegistrationForm}!email@{email}}
+\index{email@{email}!forms.RegistrationForm@{forms.RegistrationForm}}
+\doxysubsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily forms.\+Registration\+Form.\+email\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  StringField(\textcolor{stringliteral}{'Email'},}
+\DoxyCodeLine{                        validators=[DataRequired(), Email()])}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classforms_1_1_registration_form_af99ae78fd6b19d0836f6e2f6d6e0eea0}\label{classforms_1_1_registration_form_af99ae78fd6b19d0836f6e2f6d6e0eea0}} 
+\index{forms.RegistrationForm@{forms.RegistrationForm}!name@{name}}
+\index{name@{name}!forms.RegistrationForm@{forms.RegistrationForm}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily forms.\+Registration\+Form.\+name\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  StringField(\textcolor{stringliteral}{'Name'},}
+\DoxyCodeLine{                           validators=[DataRequired(), Length(min=2, max=20)])}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classforms_1_1_registration_form_a3275099f982331a623428b2046285c1f}\label{classforms_1_1_registration_form_a3275099f982331a623428b2046285c1f}} 
+\index{forms.RegistrationForm@{forms.RegistrationForm}!password@{password}}
+\index{password@{password}!forms.RegistrationForm@{forms.RegistrationForm}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily forms.\+Registration\+Form.\+password = Password\+Field(\textquotesingle{}Password\textquotesingle{}, validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_registration_form_a230ea32a8ed77fb592f87f21745d6f82}\label{classforms_1_1_registration_form_a230ea32a8ed77fb592f87f21745d6f82}} 
+\index{forms.RegistrationForm@{forms.RegistrationForm}!role@{role}}
+\index{role@{role}!forms.RegistrationForm@{forms.RegistrationForm}}
+\doxysubsubsection{\texorpdfstring{role}{role}}
+{\footnotesize\ttfamily forms.\+Registration\+Form.\+role = Radio\+Field(\textquotesingle{}Role\textquotesingle{}, choices=\mbox{[}(1,\textquotesingle{}Tenant\textquotesingle{}),(0,\textquotesingle{}Landlord\textquotesingle{})\mbox{]} , validators=\mbox{[}Data\+Required()\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classforms_1_1_registration_form_acfaf2c78971449ba005ebf44dbe35af3}\label{classforms_1_1_registration_form_acfaf2c78971449ba005ebf44dbe35af3}} 
+\index{forms.RegistrationForm@{forms.RegistrationForm}!submit@{submit}}
+\index{submit@{submit}!forms.RegistrationForm@{forms.RegistrationForm}}
+\doxysubsubsection{\texorpdfstring{submit}{submit}}
+{\footnotesize\ttfamily forms.\+Registration\+Form.\+submit = Submit\+Field(\textquotesingle{}Register\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Home\+Away\+From\+Home\+Wesbite-\/master/\mbox{\hyperlink{forms_8py}{forms.\+py}}\end{DoxyCompactItemize}

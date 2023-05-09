@@ -1,0 +1,296 @@
+\hypertarget{namespacemain}{}\doxysection{main Namespace Reference}
+\label{namespacemain}\index{main@{main}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmain_1_1_post}{Post}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_review}{Review}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_user}{User}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemain_a64310d76bee3c7581aaa85925bf1bb53}{load\+\_\+user}} (user\+\_\+id)
+\item 
+def \mbox{\hyperlink{namespacemain_aec6373e7075ef38767ce8e9eaa046ddf}{home}} ()
+\item 
+def \mbox{\hyperlink{namespacemain_a0b798bc6680a57af43cd7634cb785e89}{search}} ()
+\item 
+def \mbox{\hyperlink{namespacemain_a27892018c9d2c60d9c341c63e573941e}{show\+\_\+post}} ()
+\item 
+def \mbox{\hyperlink{namespacemain_afa12568657693cf5331b03e650c6e57b}{reward}} ()
+\item 
+def \mbox{\hyperlink{namespacemain_a625fe99fcec3e3fce833aa42f9aeb6b7}{register}} ()
+\item 
+def \mbox{\hyperlink{namespacemain_a325d966924c7c2622fcc50c3626bc8ed}{login}} ()
+\item 
+def \mbox{\hyperlink{namespacemain_a27e72161a2060436a23b0a8955b890e4}{logout}} ()
+\item 
+def \mbox{\hyperlink{namespacemain_ae5e3a43c147551315ee4e3a1b2a2de12}{profile}} ()
+\item 
+def \mbox{\hyperlink{namespacemain_a124f6df9e23725a15b59afa5ce9666b0}{others\+\_\+profile}} ()
+\item 
+def \mbox{\hyperlink{namespacemain_ae45c28490c18e488df3f39f62d0c8226}{save\+\_\+picture}} (form\+\_\+picture)
+\item 
+def \mbox{\hyperlink{namespacemain_af754ae2e697382ab9194936c4af60906}{save\+\_\+post\+\_\+picture}} (form\+\_\+picture)
+\item 
+def \mbox{\hyperlink{namespacemain_a82765a67ce72fd48b569b7577c6d0f26}{post}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemain_a5fa94f0581009434c7a63791944d6ff4}{app}} = Flask(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{namespacemain_afadee2a30284fe18a4fee574c23c94e3}{db}} = S\+Q\+L\+Alchemy(\mbox{\hyperlink{namespacemain_a5fa94f0581009434c7a63791944d6ff4}{app}})
+\item 
+\mbox{\hyperlink{namespacemain_ab76ac3ebd1a986f64619c260941f3e0f}{bcrypt}} = Bcrypt(\mbox{\hyperlink{namespacemain_a5fa94f0581009434c7a63791944d6ff4}{app}})
+\item 
+\mbox{\hyperlink{namespacemain_a120600e95869aec6e0a68a21b3588914}{login\+\_\+manager}} = Login\+Manager(\mbox{\hyperlink{namespacemain_a5fa94f0581009434c7a63791944d6ff4}{app}})
+\item 
+\mbox{\hyperlink{namespacemain_af23a188fedb2acb1fe239516abd777ed}{login\+\_\+view}}
+\item 
+\mbox{\hyperlink{namespacemain_a6552e9f37c214ccbf3ece963a0757ddf}{login\+\_\+message\+\_\+category}}
+\item 
+list \mbox{\hyperlink{namespacemain_ac212ee01e4a21c3c1c3770e9ffb8886e}{searched}} = \mbox{[}$\,$\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacemain_a2b5a7f7754cb7c4b81122fbb897ad2fe}{nofilter}} = 0
+\item 
+\mbox{\hyperlink{namespacemain_ad0a71fa7b4080e971323a6c3b1c16331}{methods}}
+\item 
+\mbox{\hyperlink{namespacemain_a800974c07a8e7de9888fff8cd98a827e}{debug}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Several module imported for different functionality as describe:
+
+secrets is imported to assign a secrete key for security of cookies
+pillow is imported for resizing image
+ various Module imported from flask
+ datetime imported for time and date
+ imports text from sqlalchemy that will convert a string to text which further can be used as as sql query 
+ SQLAlchemy is used to implement database for this project
+ Bcrypt is used for storing the password in encrypted manner to database
+ these are various login related modules which helps in implementing trivial tasks related to login and signup\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemain_aec6373e7075ef38767ce8e9eaa046ddf}\label{namespacemain_aec6373e7075ef38767ce8e9eaa046ddf}} 
+\index{main@{main}!home@{home}}
+\index{home@{home}!main@{main}}
+\doxysubsubsection{\texorpdfstring{home()}{home()}}
+{\footnotesize\ttfamily def main.\+home (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}routes the application to this function when path is '/' or '/home' , renders the home page ,
+ takes an html page as an argument and list of posts
+fetch the information from database about post and render it on home.html\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_a64310d76bee3c7581aaa85925bf1bb53}\label{namespacemain_a64310d76bee3c7581aaa85925bf1bb53}} 
+\index{main@{main}!load\_user@{load\_user}}
+\index{load\_user@{load\_user}!main@{main}}
+\doxysubsubsection{\texorpdfstring{load\_user()}{load\_user()}}
+{\footnotesize\ttfamily def main.\+load\+\_\+user (\begin{DoxyParamCaption}\item[{}]{user\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}returns an instance of class User with id 'user_id' \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_a325d966924c7c2622fcc50c3626bc8ed}\label{namespacemain_a325d966924c7c2622fcc50c3626bc8ed}} 
+\index{main@{main}!login@{login}}
+\index{login@{login}!main@{main}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily def main.\+login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} This function is used to implement login functionality ,
+routes application here when path is '/login'
+checks for authentication of the user ,
+ whether credentials are already stored or not 
+ if authenticated , redirects to 'home' page 
+
+ on un-successfull login , message is flashed in red \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_a27e72161a2060436a23b0a8955b890e4}\label{namespacemain_a27e72161a2060436a23b0a8955b890e4}} 
+\index{main@{main}!logout@{logout}}
+\index{logout@{logout}!main@{main}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily def main.\+logout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}inbuilt function from flask_login which handles the functionalities related to logout and redirects the user to home page \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_a124f6df9e23725a15b59afa5ce9666b0}\label{namespacemain_a124f6df9e23725a15b59afa5ce9666b0}} 
+\index{main@{main}!others\_profile@{others\_profile}}
+\index{others\_profile@{others\_profile}!main@{main}}
+\doxysubsubsection{\texorpdfstring{others\_profile()}{others\_profile()}}
+{\footnotesize\ttfamily def main.\+others\+\_\+profile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} This function provides the facility tha user can view profile of other user and rate them
+ updates coin of the user according to no. of ratings he got , 
+no. of posts he has done and what rating he got 
+flashes message if the rating was done successfully 
+fetches the profile image of the user whose profile is viewed \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_a82765a67ce72fd48b569b7577c6d0f26}\label{namespacemain_a82765a67ce72fd48b569b7577c6d0f26}} 
+\index{main@{main}!post@{post}}
+\index{post@{post}!main@{main}}
+\doxysubsubsection{\texorpdfstring{post()}{post()}}
+{\footnotesize\ttfamily def main.\+post (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} routes the application here if the path is '/post' , creates a object of 'Post' and adds a tuple in the Post when a new post is created , fetches the data for post from the form Post_info \end{DoxyVerb}
+
+
+\begin{DoxyVerb}login_required function can not be executed if current user is not logged in\end{DoxyVerb}
+
+
+\begin{DoxyVerb}fetches information entered in form for posting\end{DoxyVerb}
+
+
+\begin{DoxyVerb}adds a new tuple(object) post in table Post\end{DoxyVerb}
+
+
+\begin{DoxyVerb}flashes message when post is created sucessfully \end{DoxyVerb}
+
+
+\begin{DoxyVerb}redirects to home page after successfully creating the post \end{DoxyVerb}
+
+
+\begin{DoxyVerb}renders template post.html if post is not posted/created\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_ae5e3a43c147551315ee4e3a1b2a2de12}\label{namespacemain_ae5e3a43c147551315ee4e3a1b2a2de12}} 
+\index{main@{main}!profile@{profile}}
+\index{profile@{profile}!main@{main}}
+\doxysubsubsection{\texorpdfstring{profile()}{profile()}}
+{\footnotesize\ttfamily def main.\+profile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}queries all the posts from database \end{DoxyVerb}
+
+
+\begin{DoxyVerb} form for updating profile , which updates profile picture of user\end{DoxyVerb}
+
+
+\begin{DoxyVerb}saves the picture given by user\end{DoxyVerb}
+
+
+\begin{DoxyVerb} sets the user profile as the inputed image\end{DoxyVerb}
+
+
+\begin{DoxyVerb} commits the changes done in database \end{DoxyVerb}
+
+
+\begin{DoxyVerb} flashes message on successfully updating profile picture \end{DoxyVerb}
+
+
+\begin{DoxyVerb} sets the profile picture as updated(if updated) image\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_a625fe99fcec3e3fce833aa42f9aeb6b7}\label{namespacemain_a625fe99fcec3e3fce833aa42f9aeb6b7}} 
+\index{main@{main}!register@{register}}
+\index{register@{register}!main@{main}}
+\doxysubsubsection{\texorpdfstring{register()}{register()}}
+{\footnotesize\ttfamily def main.\+register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}if the user has stored login password in cookies then he will be directly logged in and
+ redirected to home page
+ This function do registration for new User.
+
+flash message when registered successfully
+redirects to login page 
+ in case of invalid registration user is redirected back to registration page\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_afa12568657693cf5331b03e650c6e57b}\label{namespacemain_afa12568657693cf5331b03e650c6e57b}} 
+\index{main@{main}!reward@{reward}}
+\index{reward@{reward}!main@{main}}
+\doxysubsubsection{\texorpdfstring{reward()}{reward()}}
+{\footnotesize\ttfamily def main.\+reward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}renders the reward page \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_ae45c28490c18e488df3f39f62d0c8226}\label{namespacemain_ae45c28490c18e488df3f39f62d0c8226}} 
+\index{main@{main}!save\_picture@{save\_picture}}
+\index{save\_picture@{save\_picture}!main@{main}}
+\doxysubsubsection{\texorpdfstring{save\_picture()}{save\_picture()}}
+{\footnotesize\ttfamily def main.\+save\+\_\+picture (\begin{DoxyParamCaption}\item[{}]{form\+\_\+picture }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} saves the profile picture in the allocated folder with random name and returns the name of image along with extension of image \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_af754ae2e697382ab9194936c4af60906}\label{namespacemain_af754ae2e697382ab9194936c4af60906}} 
+\index{main@{main}!save\_post\_picture@{save\_post\_picture}}
+\index{save\_post\_picture@{save\_post\_picture}!main@{main}}
+\doxysubsubsection{\texorpdfstring{save\_post\_picture()}{save\_post\_picture()}}
+{\footnotesize\ttfamily def main.\+save\+\_\+post\+\_\+picture (\begin{DoxyParamCaption}\item[{}]{form\+\_\+picture }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} saves the picture of the posts in the designated folder , returns name of image with extension \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_a0b798bc6680a57af43cd7634cb785e89}\label{namespacemain_a0b798bc6680a57af43cd7634cb785e89}} 
+\index{main@{main}!search@{search}}
+\index{search@{search}!main@{main}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily def main.\+search (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} gets an object of form from search page along with values entered by user in the form 
+Search in database on given condition and fetch data and 
+    redirects to 'show_post' \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacemain_a27892018c9d2c60d9c341c63e573941e}\label{namespacemain_a27892018c9d2c60d9c341c63e573941e}} 
+\index{main@{main}!show\_post@{show\_post}}
+\index{show\_post@{show\_post}!main@{main}}
+\doxysubsubsection{\texorpdfstring{show\_post()}{show\_post()}}
+{\footnotesize\ttfamily def main.\+show\+\_\+post (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}redirected from 'search', this function renders each post(enumerate each post) based on 
+search and filter conditions , sends filter form and list of posts which satisfy search condition
+if filter is not applied it is redirected to show posts without any flitering
+ all the requirements are concatenated in str1 according to the filter form 
+searched1 is a list of all the posts which satisfies searched and filter conditions ,
+ posts are filtered on the basis of filter conditions in str1
+renders show_post.html and passes filter form and filtered list of posts
+if filter is not applied all searched posts are rendered on show_post.html \end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemain_a5fa94f0581009434c7a63791944d6ff4}\label{namespacemain_a5fa94f0581009434c7a63791944d6ff4}} 
+\index{main@{main}!app@{app}}
+\index{app@{app}!main@{main}}
+\doxysubsubsection{\texorpdfstring{app}{app}}
+{\footnotesize\ttfamily main.\+app = Flask(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\mbox{\Hypertarget{namespacemain_ab76ac3ebd1a986f64619c260941f3e0f}\label{namespacemain_ab76ac3ebd1a986f64619c260941f3e0f}} 
+\index{main@{main}!bcrypt@{bcrypt}}
+\index{bcrypt@{bcrypt}!main@{main}}
+\doxysubsubsection{\texorpdfstring{bcrypt}{bcrypt}}
+{\footnotesize\ttfamily main.\+bcrypt = Bcrypt(\mbox{\hyperlink{namespacemain_a5fa94f0581009434c7a63791944d6ff4}{app}})}
+
+\mbox{\Hypertarget{namespacemain_afadee2a30284fe18a4fee574c23c94e3}\label{namespacemain_afadee2a30284fe18a4fee574c23c94e3}} 
+\index{main@{main}!db@{db}}
+\index{db@{db}!main@{main}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily main.\+db = S\+Q\+L\+Alchemy(\mbox{\hyperlink{namespacemain_a5fa94f0581009434c7a63791944d6ff4}{app}})}
+
+\mbox{\Hypertarget{namespacemain_a800974c07a8e7de9888fff8cd98a827e}\label{namespacemain_a800974c07a8e7de9888fff8cd98a827e}} 
+\index{main@{main}!debug@{debug}}
+\index{debug@{debug}!main@{main}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily main.\+debug}
+
+\mbox{\Hypertarget{namespacemain_a120600e95869aec6e0a68a21b3588914}\label{namespacemain_a120600e95869aec6e0a68a21b3588914}} 
+\index{main@{main}!login\_manager@{login\_manager}}
+\index{login\_manager@{login\_manager}!main@{main}}
+\doxysubsubsection{\texorpdfstring{login\_manager}{login\_manager}}
+{\footnotesize\ttfamily main.\+login\+\_\+manager = Login\+Manager(\mbox{\hyperlink{namespacemain_a5fa94f0581009434c7a63791944d6ff4}{app}})}
+
+\mbox{\Hypertarget{namespacemain_a6552e9f37c214ccbf3ece963a0757ddf}\label{namespacemain_a6552e9f37c214ccbf3ece963a0757ddf}} 
+\index{main@{main}!login\_message\_category@{login\_message\_category}}
+\index{login\_message\_category@{login\_message\_category}!main@{main}}
+\doxysubsubsection{\texorpdfstring{login\_message\_category}{login\_message\_category}}
+{\footnotesize\ttfamily main.\+login\+\_\+message\+\_\+category}
+
+\mbox{\Hypertarget{namespacemain_af23a188fedb2acb1fe239516abd777ed}\label{namespacemain_af23a188fedb2acb1fe239516abd777ed}} 
+\index{main@{main}!login\_view@{login\_view}}
+\index{login\_view@{login\_view}!main@{main}}
+\doxysubsubsection{\texorpdfstring{login\_view}{login\_view}}
+{\footnotesize\ttfamily main.\+login\+\_\+view}
+
+\mbox{\Hypertarget{namespacemain_ad0a71fa7b4080e971323a6c3b1c16331}\label{namespacemain_ad0a71fa7b4080e971323a6c3b1c16331}} 
+\index{main@{main}!methods@{methods}}
+\index{methods@{methods}!main@{main}}
+\doxysubsubsection{\texorpdfstring{methods}{methods}}
+{\footnotesize\ttfamily main.\+methods}
+
+\mbox{\Hypertarget{namespacemain_a2b5a7f7754cb7c4b81122fbb897ad2fe}\label{namespacemain_a2b5a7f7754cb7c4b81122fbb897ad2fe}} 
+\index{main@{main}!nofilter@{nofilter}}
+\index{nofilter@{nofilter}!main@{main}}
+\doxysubsubsection{\texorpdfstring{nofilter}{nofilter}}
+{\footnotesize\ttfamily int main.\+nofilter = 0}
+
+\mbox{\Hypertarget{namespacemain_ac212ee01e4a21c3c1c3770e9ffb8886e}\label{namespacemain_ac212ee01e4a21c3c1c3770e9ffb8886e}} 
+\index{main@{main}!searched@{searched}}
+\index{searched@{searched}!main@{main}}
+\doxysubsubsection{\texorpdfstring{searched}{searched}}
+{\footnotesize\ttfamily list main.\+searched = \mbox{[}$\,$\mbox{]}}
+
